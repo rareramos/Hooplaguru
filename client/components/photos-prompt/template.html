@@ -1,0 +1,44 @@
+<template name='PhotosPrompt'>
+  <div id={{modalId}} class='ea-modal'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div id='share-heading' class='header-stacked main visible'>
+            {{> ModalHeader title=deletedtitle
+              leftIcon='/icons/icon-cancel-x-black@2x.png'
+              leftIconClass='close-share left-header-icon'
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='event-media-wrapper'>
+      {{#each imagesByRows}}
+        <div class='row media-tiles-row'>
+          {{#each this}}
+            {{#MediaTile image=this}}
+              <div class='media-edit-wrapper'>
+                <div class='media-edit-btn'>
+                  {{#if isSelected}}
+                    <img
+                      class='media-edit-check'
+                      src='icons/icon-check-white@2x.png'>
+                  {{/if}}
+                </div>
+              </div>
+            {{/MediaTile}}
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+
+    <ul class='share-btn-wrapper'>
+      <li class='guest-collection-header'>
+        <button id='add-guest-btn' class='batch-action-btn h-btn-large'>
+          {{batchAction}} {{shareCountText}}
+        </button>
+      </li>
+    </ul>
+  </div>
+</template>

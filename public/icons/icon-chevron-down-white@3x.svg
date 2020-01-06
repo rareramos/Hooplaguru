@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-chevron-down-white@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="The-Wall" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M2.22305559,6.53047872 C1.92572225,6.8181383 1.92572225,7.28388298 2.22305559,7.57154255 C2.51994448,7.85856383 3.0021667,7.85920213 3.29950003,7.57154255 L7.55505559,3.41430851 C7.85238892,3.12664894 7.85238892,2.66047872 7.55505559,2.37281915 L3.29950003,-1.78441489 C3.0021667,-2.0718617 2.52038892,-2.0718617 2.22305559,-1.78441489 C1.92572225,-1.49675532 1.92572225,-1.03101064 2.22261114,-0.743351064 L5.71261114,2.89367021 L2.22305559,6.53047872" id="icon-chevron-down-white" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(5.000000, 3.000000) rotate(90.000000) translate(-5.000000, -3.000000) "></path>
+    </g>
+</svg>

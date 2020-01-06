@@ -1,0 +1,54 @@
+<template name='AddGuestsMain'>
+  <div id="add-guests-main-modal" class='loading-wrapper-full'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=headerTitle leftIcon='/icons/icon-cancel-x-black@2x.png' leftIconClass='close-add-guests-main left-header-icon'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class='add-guest-btn-wrapper collection with-header'>
+      {{#if isTouchDevice}}
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-contact-btn' class='h-btn-large'>
+          {{_ "guests.add_contact"}}
+        </button>
+      </li>
+      {{/if}}
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-outlook-btn' class='h-btn-large'>
+          {{_ "guests.add_outlook"}}
+        </button>
+      </li>
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-events-btn' class='h-btn-large'>
+          {{_ "guests.add_pastevent"}}
+        </button>
+      </li>
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-twitter-btn' class='h-btn-large'>
+          {{_ "guests.add_twitter"}}
+        </button>
+      </li>
+      {{#unless isCordova}}
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-file-btn' class='h-btn-large'>
+          {{_ "guests.add_files"}}
+        </button>
+      </li>
+      {{/unless}}
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='add-guest-manually-btn' class='h-btn-large'>
+          {{_ "guests.add_manually"}}
+        </button>
+      </li>
+      <li class='guest-collection-header'>
+        <button tabindex="-1" id='guest-main-btn' class='h-btn-large'>
+          {{_ "guests.done_adding_guests"}}
+        </button>
+      </li>
+    </ul>
+  </div>
+</template>

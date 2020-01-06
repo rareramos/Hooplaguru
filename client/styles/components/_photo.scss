@@ -1,0 +1,152 @@
+.full-photo-wrapper {
+  height: 100%;
+}
+
+.full-photo-image {
+  width: 100%;
+  height: auto;
+}
+
+.choose-cover-photo-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  a {
+    line-height: 50px;
+  }
+}
+
+.full-photo-background, .full-media-background {
+  @extend .absolute-cover;
+  display: none;
+
+  top: 0;
+  background-color: $primary-color;
+  z-index: 1000;
+  color: white;
+  position: absolute;
+
+  .close-full-photo {
+    position: absolute;
+    padding: 7px 15px 0 12px;
+    z-index: 1000;
+  }
+
+  .valign {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.inverted-btn {
+  border: 1px solid $primary-color-light;
+  background-color: $primary-color;
+  color: $primary-color-light;
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+.pswp-video
+{
+  position: absolute;
+  top:50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+video {
+    object-fit: cover;
+}
+
+.vide-play-image {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+  z-index: 999;
+}
+
+.loaderDiv {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+}
+
+.wall-loaderDiv {
+  position: absolute;
+  z-index: 9;
+  width: 97%;
+  height: 90%;
+  background: rgba(0,0,0,0.65);
+}
+
+@media screen and (min-width:768px) {
+  
+  .wall-loaderDiv {
+    width: 335px;
+    height: 335px;;
+  }
+}
+
+.loader-img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+
+
+//====================
+.loader{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* LOADER 1 */
+
+#media-loader:before, #media-loader:after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  border-top-color: #3498db;
+}
+
+#media-loader:before{
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#media-loader:after{
+  border: 10px solid #ccc;
+}
+
+@keyframes spin{
+  0%{
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%{
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

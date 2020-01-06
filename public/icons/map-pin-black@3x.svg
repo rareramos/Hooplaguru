@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="43px" viewBox="0 0 25 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>map-pin-black@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="1" in="SourceGraphic" result="blur"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Event-Details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Event---Details-1" sketch:type="MSArtboardGroup" transform="translate(-150.000000, -440.000000)" fill="#000000">
+            <g id="Next-Activity-2" sketch:type="MSLayerGroup" transform="translate(0.000000, 230.000000)">
+                <g id="Location" transform="translate(0.000000, 179.000000)" sketch:type="MSShapeGroup">
+                    <g id="map-pin-black" transform="translate(151.000000, 32.000000)">
+                        <ellipse id="Oval-24" opacity="0.249999985" fill-opacity="0.99000001" filter="url(#filter-1)" cx="12" cy="37" rx="7" ry="2"></ellipse>
+                        <path d="M11.5,0 C5.14832,0 0,5.0373 0,11.25 C0,21.99105 11.5,36 11.5,36 C11.5,36 23,21.99105 23,11.25 C23,5.0373 17.85122,0 11.5,0 L11.5,0 Z M11.5,16 C9.01433333,16 7,13.9853333 7,11.5 C7,9.01466667 9.01433333,7 11.5,7 C13.9853333,7 16,9.01466667 16,11.5 C16,13.9853333 13.9853333,16 11.5,16 L11.5,16 Z" id="Imported-Layers" stroke="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

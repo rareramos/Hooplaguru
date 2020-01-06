@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-plus-add-event-black@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M7,10 L1.50863659,10 C0.666420147,10 0,9.32842712 0,8.5 C0,7.66579723 0.67543961,7 1.50863659,7 L7,7 L7,1.50863659 C7,0.666420147 7.67157288,0 8.5,0 C9.33420277,0 10,0.67543961 10,1.50863659 L10,7 L15.4913634,7 C16.3335799,7 17,7.67157288 17,8.5 C17,9.33420277 16.3245604,10 15.4913634,10 L10,10 L10,15.4913634 C10,16.3335799 9.32842712,17 8.5,17 C7.66579723,17 7,16.3245604 7,15.4913634 L7,10 Z" id="icon-plus-add-event-black" fill="#333333" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

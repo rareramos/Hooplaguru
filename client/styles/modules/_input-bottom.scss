@@ -1,0 +1,150 @@
+.caption-form {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2000;
+  border-top: 1px solid lightgray;
+  background-color: white;
+  color: $primary-color;
+
+  input {
+    margin: 0;
+    padding-left: 10px;
+  }
+}
+
+.post-field-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: $ea-form-border;
+
+  .post-field-input {
+    border: none;
+    resize: none;
+    width: 75%;
+    box-sizing: border-box;
+    line-height: 25px;
+    height: 25px;
+    margin-left: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .post-field-inner {
+    position: relative;
+  }
+
+  .important-wrapper {
+    position: relative;
+    bottom: -10px;
+    height: 40px;
+    background-color: $ea-light-yellow;
+    padding-left: 15px;
+
+    p {
+      margin: 0 0 0 29px;
+      line-height: 40px;
+      font-family: 'Lato_Light';
+    }
+
+    .important-checkbox {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      top: 10px;
+    }
+  }
+}
+
+
+.post-text-right {
+  right: 55px !important;
+}
+.post-submit-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  height: 50px;
+  width: 50px;
+
+  .post-submit-bg {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: $ea-lightgray;
+
+    &.black-bg {
+      background-color: $primary-color;
+    }
+
+    img {
+      height: 15px;
+      width: 15px;
+      padding: 8px 0 0 7px;
+    }
+  }
+}
+
+.post-form-icons {
+  position: absolute;
+  right: 7px;
+  bottom: 0;
+  width: 100px;
+  height: 36px;
+  color: $primary-color;
+
+  .toggle-importance {
+    position: absolute;
+    height: 20px;
+    padding: 8px;
+    right: 52px;
+    cursor: pointer;
+  }
+
+  .post-field-photo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 7px;
+    cursor: pointer;
+  }
+
+  input.js-file {
+    cursor: pointer;
+  }
+
+  .post-form-submit {
+    position: absolute;
+    bottom: -14px;
+    right: 3px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  &.comment-send-wrapper {
+    z-index: 10000;
+  }
+}
+
+.post-form-icons.wall-post-form-icons {
+  .toggle-importance {
+    bottom: 8px;
+    right: 56px;
+    padding: 0;
+  }
+
+  .post-form-submit {
+    bottom: 1px;
+  }
+}

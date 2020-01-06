@@ -1,0 +1,28 @@
+<template name='MediaTile'>
+  <div class='col s4 media-tile-wrapper'>
+    <div class='card media-tile'>
+    {{#if image.uploadStatus}}
+    <div id="meida_loader_{{image._id}}">
+      <div class="loaderDiv">
+        {{> Loader}}
+      </div>
+    </div>
+    {{/if}}
+      {{> Image
+        image=image
+        className='media-tile-image'}}
+      {{> Template.contentBlock}}
+    </div>
+    <div class="like-pic" data-id="{{image.imageId}}" data-event="Photo liked.">
+      {{#if likedImg}}
+        <img width="16px" data-id="{{image.imageId}}" src="/icons/icon-like-black.png" />        
+      {{else}}
+        <img width="16px" data-id="{{image.imageId}}" src="/icons/icon-like-ouline.png" />
+      {{/if}}
+      {{likescount}}
+    </div>
+    <div class="cmnt-pic"  data-id="{{image.imageId}}">
+    	<img data-id="{{image.imageId}}" width="16px" src="/icons/icon-comment-black.png" />{{commentscount}}
+    </div>
+  </div>
+</template>     

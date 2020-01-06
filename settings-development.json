@@ -1,0 +1,30 @@
+{
+  "public": {
+    "APP_NAME": "Hoopla",
+    "APPSEE_API_KEY": "8175722687a34fd68f472063827ffc8f",
+    "SEGMENT_API_KEY": "VkrfT7WODUp04hBm0HeppRMA3g7RFTks",
+    "BRANCH_API_URL": "https://api.branch.io/v1/url/",
+    "BRANCH_API_KEY": "key_live_jjc5dUIJSxIbJHdn8BEPEdhfytclu4Oo",
+    "googleApiKey": "AIzaSyCJGhhflFiUprOAQq67j1WA9HLqjPmoJLE",
+    "googleApiUrl": "https://maps.googleapis.com/maps/api/staticmap",
+    "logoUrl": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/yce2D2ocovu6GcPjB-email-invite-footer-logo@2x.png",
+    "keyImageUrl": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/LH8ja7y4fkN5c3Pru-email-login-icon-key@2x.png",
+    "appStoreBadge": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/QirEhbZ88xPjBHw9e-app-store-badge.png",
+    "googlePlayBadge": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/cozDCGKoDBXwT2o9P-google-play-badge@2x.png",
+    "supportLink": "mailto:support@eventassist.zendesk.com?subject=Hoopla%20Feedback",
+    "CLOUDINARY_CLOUND_NAME":  "eventassist"
+  },
+  "MANDRILL_API_USER": "cschwarz@revcord.com",
+  "MANDRILL_API_KEY": "sjCBd8H49J95SfEa7SwJLA",
+  "TWILIO_ACCOUNT_SID": "AC0834abd123e34878a656db23aa132f89",
+  "TWILIO_ACCOUNT_TOKEN": "cae006611b855faabd614fc08efb092d",
+  "TWILIO_PHONE_NUMBER": "7135885546",
+  "BITLY_API_KEY": "R_49bc14b0a5f54b8d9caeefd50fadeec5",
+  "BITLY_USERNAME": "poeticappteam",
+  "kadira": {
+    "appId": "Rch7r2RJ3AcZZ9RoC",
+    "appSecret": "19b70368-f464-451c-9454-bd01fd6f643e"
+  },
+  "CLOUDINARY_API_KEY": "153524939269928",
+  "CLOUDINARY_API_SECRET": "y302VkihwEg1-tf6kSCzDNGBGTc"
+}

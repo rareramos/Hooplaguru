@@ -1,0 +1,13 @@
+<template name='RsvpStepOne'>
+  <h3 class='rsvp-heading'>{{text.heading1}}<br />{{text.heading2}}</h3>
+
+  <p class='rsvp-paragraph'>{{text.paragraph}}</p>
+
+  {{#autoForm id='rsvp-code-form' schema='Schemas.RsvpCode'}}
+    {{> InputWrapper input='code' label='enter confirmation code'}}
+    {{> SubmitWrapper
+      text='ok'
+      classNames='rsvp-code-submit'
+    }}
+  {{/autoForm}}
+</template>

@@ -1,0 +1,35 @@
+<template name='Index'>
+  <div class='body-black'>
+  </div>
+  <div class='page-wrapper homepage-bg' style='background-image: url("images/eventassist-dinnerparty-bg-2048.jpg")'>
+    {{#unless formHidden}}
+      <footer class='footer'>
+        <img class='site-logo' src='/images/logo-landing-screen@2x.png'>
+
+        <form id='login-form'>
+          {{#if formError}}
+            <p class='login-form-error center-align' style='color: red;'>{{formError}}</p>
+          {{/if}}
+
+          <input type='email'
+            id='login-input'
+            name='login-input'
+            placeholder='Email address'
+            autocapitalize='none'
+            autocorrect='off'>
+          <button class='btn' type='submit'>Next</button>
+        </form>
+      </footer>
+    {{/unless}}
+  </div>
+
+  {{#if overlayTemplate}}
+    <div class='loading-wrapper-full'>
+      <div class='valign-wrapper'>
+        <div class='valign center-align'>
+          {{> Template.dynamic template=overlayTemplate}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</template>

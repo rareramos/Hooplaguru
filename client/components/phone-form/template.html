@@ -1,0 +1,65 @@
+<template name='PhoneForm'>
+  <div class='valign-wrapper'>
+    <div class='valign center-align'>
+      <div class="login-logo">
+        <img src="images/logo-landing-screen@2x.png">
+      </div>
+      <h4 class='onboard-heading valign-offset'>{{_ "login.started"}}</h4>
+      <p class='onboard-details'>{{{_ "login.started_details"}}}</p>
+
+      {{#autoForm id='phone-form' collection='Meteor.users' }}
+        
+        {{getCurrentCountryCode}}  
+        <!--<select class="input-xlarge country-code" id="country-select" name="country">
+          {{#each countrylist in get_countries}}
+            <option value="+{{countrylist.cn_phone}}" >{{countrylist.cn_short_en}} (+{{countrylist.cn_phone}})</option>
+          {{/each}}
+        </select>-->
+        <input class='country-code' type='text' value='{{getCurrentCountryCode}}'>
+        <input type='tel'
+          id='phone-input'
+          placeholder='{{_ "login.phone_placeholder"}}'
+          autocapitalize='none'
+          autocorrect='off'>
+        <button id='phone-submit' disabled=true class='btn' type='submit'>{{_ "general.next"}}</button>
+      {{/autoForm}}
+
+       <p class='onboard-details language-div' >
+          Languages : <a id="en" class="language-link">English</a>
+          <a id="zh" class="language-link">中文</a>
+          <a id="es" class="language-link">Español</a>
+          <a id="hi" class="language-link">हिंदी</a>
+          <a id="ar" class="language-link">عربى</a>
+          <a id="fr" class="language-link">Français</a>
+       </p>
+
+    </div> 
+
+  </div>
+  {{#unless isCordova}}
+  <div class="events-app-download-btn">
+    <div class="app-store-badges-div">
+      <div class="app-dowanload-url-btn">
+        <a href="{{hooplaAppStoreUrl}}" target="_blank">
+          <img class="app-store-badge" src="/images/app-store-badge.png">
+        </a>
+      </div>
+      <div class="app-dowanload-url-btn">
+        <a href="{{hooplaGooglePlayUrl}}" target="_blank">
+          <img class="app-store-badge" src="/images/google-play-badge@2x.png">
+        </a>
+      </div>
+      <a href="#" class="syncCountries" style="color: #fff;display: none;">Sync Countries</a>
+    </div>
+  </div>
+  {{/unless}}
+  {{> Popup}}
+  <div class="connection-loss-error">
+     {{> status}}  
+  </div>
+
+  <div>test</div>
+</template>
+
+     
+  

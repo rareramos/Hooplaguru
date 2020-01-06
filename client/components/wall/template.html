@@ -1,0 +1,97 @@
+<template name='Wall'>
+  
+  <div class='swiper-slide' style='background: white;'>
+      <ul class='collection wall-post-collection'>
+        <div class='wall-slide'>
+        {{#if moreToCome}}
+          <div class="load-more-btn-container">
+            <a>
+              <p>{{_ "wall.load_more"}}</p>
+            </a>
+          </div>
+        {{/if}}
+        <div class='wall-posts-wrapper'>
+
+          {{#each wallContents.seen}}
+            {{#if isComment}}
+              {{> Comment}}
+            {{else}}
+              {{> Post}}
+            {{/if}}
+          {{/each}}
+
+          {{#if wallContents.unseen.length}}
+            {{#unless userHasInteracted}}
+              <div class='collection-item new-messages-notice'>
+                <div class='new-msg-divider'></div>
+                <p>{{_ "wall.new_message"}}</p>
+              </div>
+            {{/unless}}
+
+            {{#each wallContents.unseen}}
+              {{#if isComment}}
+                {{> Comment}}
+              {{else}}
+                {{> Post}}
+              {{/if}}
+            {{/each}}
+          {{/if}}
+        </div>
+        <div id="wall-post-bottom"></div>
+        <form id='wall-post-form'>
+          <div>
+          <textarea id='wall-post-field' tabindex="-1" placeholder='{{_ "wall.message"}}'></textarea>
+          </div>
+
+          <div>
+            <div class='post-form-icons post-text-right wall-post-form-icons'>
+              <!--{{#if hasPostBody}}
+                {{#if importantIconSrc}} 
+                  <img class='toggle-importance' src='{{importantIconSrc}}'>
+                {{/if}}
+                <p class='post-form-submit wall font-uppercase' data-event="Message Posted On Wall.">{{_ "wall.send"}}</p>
+              {{else}}-->
+              
+                <!--{{#autoForm id='wall-post-media-upload-form' schema='Schemas.Upload' type='insert'}}
+                  
+                  {{> afQuickField
+                    name='file'
+                    labelClass='h-btn-large btn-unstyled'
+                    labelTemplate='UploadWallPostMedia'
+                    accept='image/*,video/*'
+                    tabindex='2'
+                  }}-->
+                <form id='wall-post-media-upload-form'>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <div class="upload-media-main">
+                        <button id="wall-photos-upload-btn" type="button" style="" tabindex="-1" class="upload-input-btn h-btn-large btn-unstyled">
+                          <img class="post-field-photo" src="/icons/icon-camera-black@3x.svg" style="padding-right: 0;">
+                          <input style="" accept="image/*" class="js-file wall-photos-file" type="file" id="wall-photos-upload">
+                        </button>
+                        <button id="wall-videos-upload-btn" type="button" style="" tabindex="-1" class="upload-input-btn h-btn-large btn-unstyled">
+                          <img class="post-field-photo" src="/icons/icon-video-upload.svg" height="35" width="38">
+                          <input style="" accept="video/*" class="js-file wall-photos-file" type="file" id="wall-videos-upload">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                
+              <!--  {{/autoForm}}
+              {{/if}}-->
+            </div>
+
+            <div class='post-form-icons wall-post-form-icons'>
+              <!--{{#if importantIconSrc}} 
+                <img class='toggle-importance' src='{{importantIconSrc}}'>
+              {{/if}}-->
+              <p class='post-form-submit wall font-uppercase' data-event="Message Posted On Wall.">{{_ "wall.send"}}</p>
+            </div>
+          </div>
+        </form>
+        </div>
+      </ul>
+
+  </div>
+</template>

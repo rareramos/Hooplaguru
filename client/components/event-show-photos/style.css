@@ -1,0 +1,58 @@
+.inline-buttons {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding:0 5px;
+}
+
+.inline-buttons .h-btn-large {
+  font-family: 'Lato_Reg';
+  box-sizing: border-box;
+}
+
+.inline-buttons .inline-button {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+#event-photos-buttons {
+  margin-top: 10px;
+}
+
+#event-photos-form button {
+  width: 100%;
+}
+
+.inline-button.btn-photo-inline {
+  padding: 0;
+  margin: 0 5px
+}
+
+.btn-photo-inline.form-btn {
+  padding: 0 10px;
+  margin: 0
+}
+
+#event-photos-form {
+  margin: 0 5px;
+}
+.inline-selecbox {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0px 5px 20px;
+}
+
+.video-upload-progress {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0;
+  z-index: 99; 
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 2px solid;
+}

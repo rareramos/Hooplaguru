@@ -1,0 +1,65 @@
+<template name='AddGuestsOutlook'>
+  <div id="add-guests-outlook-modal" class='loading-wrapper-full'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=headerTitle leftIcon='/icons/icon-cancel-x-black@2x.png' leftIconClass='close-add-guests-outlook left-header-icon'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='add-guests-events-wrapper'>
+      
+      <div>
+        {{#each invite in contacts}}
+          {{invite.phone}}
+        {{/each}}
+
+        <ul class='collection with-header contacts-collection contacts-collection-outlook'>
+          {{#if loggedinOutlook}}
+            {{#if visibleContacts}}
+              <div class='checkbox-container select-all'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{allSelectedIcon}}'>
+                  <span class='checkbox-text'>{{selectAllText}}</span>
+                </p>
+              </div>
+            {{/if}}
+
+            {{#each visibleContacts}}
+              <div class='checkbox-container personal-contact' data-contact-id='{{key}}'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{checkboxIcon}}'>
+                  <span class='checkbox-text'>
+                    {{value.first_name}} {{value.last_name}}
+                  </span>
+                  <span class='checkbox-subtext'>
+                    {{value.emails.preferred}}
+                  </span>
+                </p>
+              </div>
+            {{/each}}
+          {{else}}
+          <ul class='add-guest-btn-wrapper-collection collection'>
+            <li class='collection-item guest-collection-header'>
+              <button id='loginwithoutlook' class='h-btn-large'>
+                {{_ "guests.login_outlook"}}
+              </button>
+            </li>
+          </ul>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    {{#if loggedinOutlook}}
+    <ul class='add-guest-btn-wrapper-collection collection'>
+      <li class='collection-item guest-collection-header'>
+        <button id='add-personal-contacts-btn' class='h-btn-large' data-event="Guest Added From Outlook.">
+          {{addContactsButtonText}}
+        </button>
+      </li>
+    </ul>
+    {{/if}}
+  </div>
+</template>

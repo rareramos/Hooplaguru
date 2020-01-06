@@ -1,0 +1,21 @@
+<template name='EventNav'>
+  <nav>
+    <div class='nav-wrapper'>
+      <div class="swiper-button-prev"></div>
+      {{options.pagination}}
+      {{#swiperSlides
+        options=options
+        classNames='navbar event-show-swiper'
+        backgroundTemplate='EventBackBtn'
+      }}
+        <div class='swiper-slide slide-nav-link'><h4>{{_ "event_nav.details"}}</h4></div>
+        <div class='swiper-slide slide-nav-link'><h4>{{_ "event_nav.wall"}}</h4></div>
+        <div class='swiper-slide slide-nav-link'><h4>{{_ "event_nav.photos"}}</h4></div>
+        <div class='swiper-slide slide-nav-link'><h4>{{navLinkText}}</h4></div>
+        <div class='swiper-slide slide-nav-link'><h4>{{_ "event_nav.messages"}}</h4></div>
+      {{/swiperSlides}}
+      <div class="swiper-button-next"></div>
+      <div class="arrow_box"></div>
+    </div>
+  </nav>
+</template>

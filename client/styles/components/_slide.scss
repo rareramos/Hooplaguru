@@ -1,0 +1,63 @@
+.swiper-container-tall {
+  background-color: $ea-gray;
+}
+
+.tall-slide, .short-slide {
+  @extend .scrollable;
+  background-color: $primary-color-light;
+}
+
+.bounce-scroll-slide {
+  height: 100%;
+}
+
+.swiper-slide {
+  &.white-bg {
+    background: $primary-color-light;
+  }
+}
+
+.navbar.event-show-swiper {
+  .swiper-slide {
+    background: $primary-color;
+    cursor: pointer;
+  }
+}
+
+.show-photos-slide {
+  .event-media-wrapper {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #event-photos-buttons {
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.wall-slide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .wall-posts-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .post-form-icons {
+    .row {
+      margin-bottom: 0;
+    }
+  }
+
+  .post-form-submit {
+    &.wall {
+      margin-top: 0;
+      bottom: 0;
+    }
+  }
+}

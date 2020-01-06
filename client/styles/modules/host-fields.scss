@@ -1,0 +1,13 @@
+.host-fields {
+  height: 48px;
+  overflow-y: hidden;
+  position: relative;
+
+  .host-fields-arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 6px 12px 6px 12px;
+    z-index: 99;
+  }
+}

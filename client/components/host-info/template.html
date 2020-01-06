@@ -1,0 +1,32 @@
+<template name='HostInfo'>
+  <div class='host-info-wrapper'>
+    <li class='collection-item collection-item-top'>
+      <h3>{{name}}{{#if role}}, {{role}}{{/if}}</h3>
+    </li>
+
+    {{#if email}}
+      <li class='collection-item collection-item-middle'>
+        <h5>
+          {{email}}
+          <a class='secondary-content'>
+            <img class='host-email-icon' src='/icons/icon-host-email-black@2x.png'>
+          </a>
+        </h5>
+      </li>
+    {{/if}}
+
+    {{#if phone}}
+      <li class='collection-item collection-item-bottom'>
+        <h5>
+          {{phone}}
+          <a class='secondary-content'>
+            <img class='host-sms-icon' src='/icons/icon-host-sms-black@2x.png'>
+          </a>
+          <a class='secondary-content'>
+            <img class='host-phone-icon' src='/icons/icon-host-phone-black@2x.png'>
+          </a>
+        </h5>
+      </li>
+    {{/if}}
+  </div>
+</template>

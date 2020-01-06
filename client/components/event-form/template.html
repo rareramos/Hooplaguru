@@ -1,0 +1,113 @@
+<template name='EventForm'>
+  <div class='ea-modal event-modal'>
+    <div class='navbar-fixed'>
+      <nav class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader
+              title=eventFormTitle
+              leftIcon='/icons/icon-cancel-x-black@2x.png'
+              leftIconClass='close-event-form left-header-icon'
+            }}
+          </div>
+          <div class='header-stacked add-host'>
+            {{> ModalHeader
+              title='add host'
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-add-host left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked edit-host'>
+            {{> ModalHeader
+              title='edit host'
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-edit-host left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked cover-photo'>
+            {{> ModalHeader
+              title=coverPhotoTitle
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-cover-photo left-header-icon left-header-arrow-icon'
+              headerClassNames='select-cover-photo-header'
+            }}
+          </div>
+          <div class='header-stacked cover-photo-category'>
+            {{> ModalHeader
+              title=categoryTitle
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-cover-photo-category left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked add-activity'>
+            {{> ModalHeader
+              title=addActivityTitle
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-add-activity left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked edit-activity'>
+            {{> ModalHeader
+              title=editActivityTitle
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-edit-activity left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked date-and-time'>
+            {{> ModalHeader
+              title='date and time'
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-date-and-time left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked location'>
+            {{> ModalHeader
+              title=locationTitle
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-location left-header-icon left-header-arrow-icon'
+            }}
+          </div>
+          <div class='header-stacked media'>
+            {{> ModalHeader
+              title='media'
+              leftIcon='/icons/icon-arrow-left-black@2x.png'
+              leftIconClass='close-media left-header-icon left-header-arrow-icon'
+              rightText='Edit'
+              rightClass='rightmost edit'
+            }}
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    {{#swiperSlides
+      options=options classNames='event-form-swiper'
+    }}
+      <div class='swiper-slide event-form-slide'>
+        <div class='bounce-scroll-slide'>
+          {{> EventFormMain currentEvent=currentEvent}}
+        </div>
+      </div>
+      <div class='swiper-slide event-form-slide'>
+        <div class='bounce-scroll-slide'>
+          {{> Template.dynamic template=firstSlide}}
+        </div>
+      </div>
+      <div class='swiper-slide event-form-slide'>
+        <div class='bounce-scroll-slide'>
+          {{> Template.dynamic template=secondSlide}}
+        </div>
+      </div>
+      <div class='swiper-slide event-form-slide'>
+        <div class='bounce-scroll-slide'>
+          {{> Template.dynamic template=thirdSlide}}
+        </div>
+      </div>
+    {{/swiperSlides}}
+
+    <form id='datepicker-form'>
+      <input id='date-picker' type='date' tabindex="-1" class='datepicker'>
+      <input id='time-picker' type='text' tabindex="-1" class='timepicker'>
+    </form>
+  </div>
+</template>

@@ -1,0 +1,38 @@
+<template name='Popup'>
+  
+    <div id="my-popup-box" style="display:none;">
+      <ul class="row">
+      <li class="searchbar">
+             <div class='location-search-container'>
+                <img class='location-search-icon' src='/icons/icon-search-black@2x.png'>
+                <input id='search-country' class='location-search-input search-country-input' type='text' placeholder='{{_ "login.search_placeholder"}}' onkeyup="searchCountry(this)">
+              </div>
+          </li>
+      </ul>
+      <ul class="row coutrycodelist">
+        
+        <li class="col s12 countrycodeli" onclick="setCountryCode({{getCurrentCountries.uid}}, '{{getCurrentCountries.cn_phone}}');">
+                 <div class="checkbox-container sms-checkbox col s1">
+                   <img class='checkbox-icon checkbox-icon-coutrycode icon-code-{{getCurrentCountries.uid}}' src='/icons/form-checkbox-on@2x.png'> 
+                 </div>
+                <span class="coutryname col s9">{{getCurrentCountries.cn_short_en}} ({{getCurrentCountries.cn_iso_2}})</span> 
+                <span class="coutrycode col s2">+{{getCurrentCountries.cn_phone}}</span>
+            </li>
+      {{#each countrylist in get_countries}}
+            {{#if compareCurrentCode countrylist.uid currentCountryCode}}
+              
+              <li class="col s12 countrycodeli" onclick="setCountryCode({{countrylist.uid}}, '{{countrylist.cn_phone}}');">
+                   <div class="checkbox-container sms-checkbox col s1">
+                     <img class='checkbox-icon checkbox-icon-coutrycode icon-code-{{countrylist.uid}}' src='/icons/form-checkbox-off@2x.png'> 
+                   </div>
+                  <span class="coutryname col s9">{{countrylist.cn_short_en}} ({{countrylist.cn_iso_2}})</span> 
+                  <span class="coutrycode col s2">+{{countrylist.cn_phone}}</span>
+              </li>
+            {{/if}} 
+      {{/each}}
+
+      <input type="hidden" name="selected-coutry-code" class="selected-coutry-code">
+      </ul>
+    </div>
+</template>
+  

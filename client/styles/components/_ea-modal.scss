@@ -1,0 +1,174 @@
+.ea-modal {
+  @extend .absolute-cover;
+
+  display: none;
+  top: 0;
+  z-index: 1000;
+  background-color: $primary-color-light;
+  overflow-x: hidden;
+  max-width: 1026px;
+
+  .navbar-fixed {
+    height: $ea-modal-header-height;
+
+    .ea-modal-nav {
+      height: $ea-modal-header-height;
+    }
+
+    .event-form-nav {
+      height: $ea-modal-header-height;
+
+      .header-stacked {
+        height: $ea-modal-header-height;
+      }
+    }
+  }
+}
+
+.ea-modal-nav, .event-form-nav {
+  background-color: $primary-color-light;
+  color: $primary-color;
+  box-shadow: none;
+  border-bottom: $ea-form-border;
+
+  .nav-wrapper {
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .left-header-icon {
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+      margin-left: 4px;
+      margin-top: 5px;
+      cursor: pointer;
+      &.left-header-arrow-icon {
+        width: 28px;
+        height: 25px;
+        padding: 6px;
+      }
+    }
+  }
+
+  .brand-logo {
+    color: $primary-color;
+
+    &.center {
+      @extend .bold-btn-txt;
+
+      line-height: $ea-modal-header-height;
+      margin: 0 0 0 -10px;
+    }
+  }
+
+  .swiper-slide {
+    width: 100%;
+
+    i {
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+
+  .modal-header-right-txt {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    margin: 0;
+    color: $primary-color;
+    line-height: $ea-modal-header-height;
+    font-family: 'Lato_Light';
+    text-transform: none;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+  }
+
+  .modal-header-left-txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $primary-color;
+    padding: 15px;
+    font-family: 'Lato_Light';
+  }
+}
+
+.base-layer {
+  @extend .scrollable;
+}
+
+.first-overlay {
+  @extend .absolute-cover;
+  @extend .offset-overlay;
+  @extend .scrollable;
+  z-index: 1100;
+}
+
+.second-overlay {
+  @extend .absolute-cover;
+  @extend .offset-overlay;
+  @extend .scrollable;
+  z-index: 1200;
+}
+
+.modal-subheading {
+  @extend .bold-btn-txt;
+  height: $navbar-height;
+  padding: 0 15px 0 15px;
+  border-bottom: none;
+  margin: 0;
+
+  .modal-subheading-inner {
+    border-bottom: $ea-form-border;
+
+    h5 {
+      line-height: 20px;
+      padding-top: 20px;
+      margin: 0 0 10px 0;
+      font-size: 13px;
+    }
+  }
+}
+
+.event-form-nav {
+  background-color: $primary-color-light;
+
+  .swiper-slide {
+    .event-form-nav-heading {
+      @extend .bold-btn-txt;
+      color: $primary-color;
+      line-height: $ea-modal-header-height;
+      margin: 0 0 0 -10px;
+      height: 0px;
+
+      &.select-cover-photo-header {
+        width: 70%;
+      }
+    }
+
+    i {
+      color: $primary-color;
+      width: 40px;
+      margin: 0;
+      line-height: $navbar-height;
+      padding: 0 10px 0 10px;
+    }
+  }
+}
+
+.header-stacked {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: $navbar-height;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.event-form-slide {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

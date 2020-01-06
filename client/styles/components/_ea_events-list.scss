@@ -1,0 +1,163 @@
+.ea_events-list {
+  @extend .scrollable;
+  background: $ea-gray;
+  position: relative;
+  /*padding-bottom: 83px;*/
+}
+
+.ea_events-list-divider {
+  height: 100px;
+  margin: 0;
+  line-height: 100px;
+  text-align: center;
+  color: $blank-state-color;
+  font-weight: bold;
+}
+
+.ea_event-listing {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1026px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.event-back-btn {
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 8px;
+  img {
+    position: relative;
+    left: 15px;
+    height: 27px;
+    width: 27px;
+  }
+}
+
+.loading-logo {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 0px;
+  bottom: 140px;
+  width: 170px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.add-event-text {
+  margin-top: 70px;
+  text-align: center;
+   p {
+     font-size: 18px;
+     font-family: 'Brandon_Light';
+     color: grey;
+     line-height: 25px;
+     margin-top: 50px;
+     }
+   p:first-child {
+     font-size: 20px;
+     color: #fff;
+     margin-bottom: 15px;
+     line-height: 30px;
+   }
+}
+
+.blank-events-logo {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 250px;
+}
+
+.events-logo {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 78px;
+  max-width: 1026px;
+  top: 0;
+  margin: 0 auto;
+  padding: 2px 0 0 0;
+  background: #29292A;
+  img {
+    width: 180px;
+  }
+}
+
+.events-app-download-btn {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  max-width: 1026px;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 0;
+  background:#29292A;
+  img {
+    width: 120px;
+  }
+}
+
+.events- {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  max-width: 1026px;
+  top: 0;
+  margin: 0;
+  padding: 10px 0;
+  background:#333;
+  img {
+    width: 140px;
+  }
+}
+
+#trigger-different-email-overlay {
+  cursor: pointer;
+}
+
+.background-opacity {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))
+}
+
+.ea_bounce-scroll {
+  /*margin-bottom: 79px;*/
+}
+
+.ea_bounce-scroll-website{
+  /*margin-bottom: 180px;*/
+}
+
+.app-dowanload-url-btn {
+  display: inline-block;
+  background: #fff;
+  padding: 2px;
+  margin-left: 20px;
+  img{
+    margin-bottom: -5px;
+  }
+}
+.app-store-badges-div{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.user-form-btn-inner {
+  cursor:pointer;
+}

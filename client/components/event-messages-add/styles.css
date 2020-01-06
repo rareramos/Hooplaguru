@@ -1,0 +1,104 @@
+.messages-wrapper{
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-bottom: 15px;
+}
+
+/* .bubble */
+
+.bubble {
+	background: #E5E4E9;
+	/* vendor rules */
+	border-radius: 20px;
+	
+	clear: both;
+	float: left;
+	margin-top: 15px;
+	padding: 8px 30px;
+	position: relative;
+	width: auto;
+	max-width: 100%;
+	word-wrap: break-word;
+	margin-left:5px;
+}
+
+.bubble:before, .bubble:after {
+	border-radius: 20px / 10px;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+.bubble:before {
+	border: 10px solid transparent;
+	bottom: 0;
+	left: -7px;
+	z-index: -2;
+}
+
+.bubble:after {
+	border: 8px solid transparent;
+	border-bottom-color: #E5E4E9;
+	bottom: 1px;
+	left: -5px;
+}
+
+.bubble--alt {
+	background: #2095FE;
+	float: right;
+	margin-right:5px;
+	color: #fff;
+}
+
+.bubble--alt:before {
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -7px;
+}
+
+.bubble--alt:after {
+	border-bottom-color: #2095FE;
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -5px;
+}
+
+#message-form{
+	padding-right: 100px;
+	padding-top:5px;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.post-form-icons {
+    position: absolute;
+    right: 7px;
+    bottom: 0;
+    width: 100px;
+    height: 36px;
+    color: black;
+}
+
+#message-field {
+	margin-bottom: 0;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    position: relative;
+    bottom: -5px;
+    padding-left: 15px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.userlistContainer {
+	text-align: center;
+	padding: 10px;
+	border-bottom:1px solid #ccc;
+}
+
+.easy-autocomplete.eac-square {
+	width: 100% !important;
+}
+
+#tags {
+	width: 100%;
+}

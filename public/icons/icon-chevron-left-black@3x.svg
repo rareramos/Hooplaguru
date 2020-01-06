@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-chevron-left-black@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Event-Details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M0.223055587,8.53047872 C-0.0742777466,8.8181383 -0.0742777466,9.28388298 0.223055587,9.57154255 C0.519944476,9.85856383 1.0021667,9.85920213 1.29950003,9.57154255 L5.55505559,5.41430851 C5.85238892,5.12664894 5.85238892,4.66047872 5.55505559,4.37281915 L1.29950003,0.215585106 C1.0021667,-0.0718617021 0.52038892,-0.0718617021 0.223055587,0.215585106 C-0.0742777466,0.503244681 -0.0742777466,0.968989362 0.222611142,1.25664894 L3.71261114,4.89367021 L0.223055587,8.53047872" id="icon-chevron-left-black" fill="#000000" sketch:type="MSShapeGroup" transform="translate(3.000000, 5.000000) scale(-1, 1) translate(-3.000000, -5.000000) "></path>
+    </g>
+</svg>

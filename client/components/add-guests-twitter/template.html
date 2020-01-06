@@ -1,0 +1,61 @@
+<template name='AddGuestsTwitter'>
+  <div id="add-guests-twitter-modal" class='loading-wrapper-full'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=headerTitle leftIcon='/icons/icon-cancel-x-black@2x.png' leftIconClass='close-add-guests-twitter left-header-icon'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='add-guests-events-wrapper'>
+      <div>
+        <ul class='collection with-header contacts-collection '>
+          {{#if loggedinTwitter}}
+            {{#if visibleContacts}}
+              <div class='checkbox-container select-all'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{allSelectedIcon}}'>
+                  <span class='checkbox-text'>{{selectAllText}}</span>
+                </p>
+              </div>
+            {{/if}}
+
+            {{#each visibleContacts}}
+              <div class='checkbox-container personal-contact pc-twitter' data-contact-id='{{key}}'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{checkboxIcon}}'>
+                  <span class='checkbox-text'>
+                    {{value.name}}
+                  </span>
+                  <div style='float:right'>
+                    <img src = "{{value.profile_image_url}}" height="50" width="50" alt= "{{value.name}}" />
+                  </div>
+                </p>
+              </div>
+            {{/each}}
+            
+          {{else}}
+            <ul class='collection login-twitter-collection'>
+              <li class='collection-item guest-collection-header'>
+                <button id='login-twitter' class='h-btn-large'>
+                  {{_ "guests.login_twitter"}}
+                </button>
+              </li>
+            </ul>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    {{#if loggedinTwitter}}
+      <ul class='add-guest-btn-wrapper-collection collection'>
+        <li class='collection-item guest-collection-header'>
+          <button id='add-personal-contacts-btn' class='h-btn-large' data-event="Guest Added From Twitter.">
+            {{addContactsButtonText}}
+          </button>
+        </li>
+      </ul>
+    {{/if}}
+  </div>
+</template>

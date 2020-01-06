@@ -1,0 +1,50 @@
+<template name='CommentsList'>
+  {{#if showComments}}
+    <ul class='collection comments-collection'>
+      <li><a class="likeperson">{{likeList}}</a></li>
+      {{#each comments}}
+        <li class='collection-item wall-collection-item {{#if importantPost}}post-important{{/if}}'>
+          <h6>
+            {{username}}
+            <span class='wall-secondary-content'>{{timeAgoPosted}}</span>
+          </h6>
+          <p class='wall-collection-text'>{{breakLines body}}</p>
+        </li>
+      {{/each}}
+    </ul>
+    <div id='wall-post-bottom'></div>
+  {{/if}}
+
+  {{#if showCommentForm}}
+    <form id='media-post-form'>
+      <textarea id='media-post-field' placeholder='{{_ "wall.message"}}'></textarea>
+    </form>
+  {{/if}}
+
+  {{#if hasCommentBody}}
+    <div class='post-form-icons comment-send-wrapper'>
+      <p class='post-form-submit' data-event="Commented On Photo.">{{_ "wall.send"}}</p>
+    </div>
+  {{/if}}
+
+  <div class='comments-list-footer'>
+    {{#if isCordova}}
+      <span class='post-prompt prompt-share media-prompt-share'>
+        <img class='post-share-icon' src='/icons/icon-share-arrow-white@2x.png' data-event="Shared Photo.">
+        {{_ "wall.share"}}
+      </span>
+    {{/if}}
+    <span class='post-prompt prompt-comment media-prompt-comment'>
+      <img class='post-comment-icon' src='/icons/icon-image-preview-add-caption@2x.png'>
+      {{_ "wall.comment"}}
+    </span>
+    <span class='post-prompt prompt-comment media-prompt-like' data-event="Liked Photo.">
+      {{#if likedImg}}
+        <img width="16px" src="/icons/icon-like-black.png" />        
+      {{else}}
+        <img width="16px" src="/icons/icon-like-ouline.png" />
+      {{/if}}
+      {{_ "wall.like"}}
+    </span>
+  </div>
+</template>

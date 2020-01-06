@@ -1,0 +1,63 @@
+<template name='UserForm'>
+  <div class='user-modal ea-modal'>
+  <div class='navbar-fixed'>
+    <nav class=ea-modal-nav>
+      <div class='nav-wrapper'>
+        {{> ModalHeader
+          leftIcon='/icons/icon-cancel-x-black@2x.png'
+          title=getAccount leftIconClass='left-header left-header-icon'
+          rightText=getLogout dataEvent='Logged Out.'
+        }}
+      </div>
+    </nav>
+  </div>
+
+
+
+  {{#autoForm
+    id='user-form' collection='Meteor.users' type='method-update' meteormethod='updateUser' doc=user
+  }}
+    {{> InputWrapper input='profile.firstName' tabindex='1' label=getFirstname}}
+    {{> InputWrapper input='profile.lastName' tabindex='2' label=getLastname}}  
+    {{> InputWrapper input='emails.0.address' tabindex='3' label=getEmail}}
+    {{> InputWrapper input='profile.phone' tabindex='4' label=getNumber disabled=true}}
+    <!--<div class="row">
+       <div class="item">
+         <p>Notifications</p>
+         <div class="toggle">        
+         {{#if isnotifyEnable}}
+           <input type="checkbox" id="toggle_reminders" name="" checked="checked" value="">
+         {{else}}
+           <input type="checkbox" id="toggle_reminders" name="" value="">
+         {{/if}}
+           <label for="toggle_reminders"></label>
+         </div>
+       </div>
+     </div>-->
+    <div class="row">
+      <div class="ea-input input-field col s12 inline-selecbox">
+        <select tabindex="-1" id="lanugage-select" class="eventList minimal language-select">
+          <option value="en" {{selectedLanguage 'en'}}>English (English)</option>
+          <option value="zh" {{selectedLanguage 'zh'}}>Chinese (中文)</option>
+          <option value="es" {{selectedLanguage 'es'}}>Spanish (Español)</option>
+          <option value="hi" {{selectedLanguage 'hi'}}>Hindi (हिंदी)</option>
+          <option value="ar" {{selectedLanguage 'ar'}}>Arabic (عربى)</option>
+          <option value="fr" {{selectedLanguage 'fr'}}>French (Français)</option>
+        </select>
+        <label for="lanugage-select">{{_ "users.select_language"}}</label>
+      </div>
+    </div>
+
+    {{> SubmitWrapper
+      tabindex='5'
+      text=getSaveChanges
+      dataEvent='Profile Updated.'
+    }}
+  {{/autoForm}}
+  <ul class="collection">
+    <li class="guest-collection-header">
+     <button class="contact-support-btn-data h-btn-large btn-photo-inline form-btn" tabindex="-1">{{_ "users.contact_support_btn"}}</button>
+    </li>
+  </ul>
+  </div>
+</template>

@@ -1,0 +1,10 @@
+.checkbox-container.load-more.load-more-btn-container {
+  text-align: center;
+  border-bottom: none;
+}
+.form-top-phone > div {
+  margin-top: -20px;
+}
+.email-phone {
+	padding: 0 !important;
+}

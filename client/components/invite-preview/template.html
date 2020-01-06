@@ -1,0 +1,38 @@
+<template name='InvitePreview'>
+  <div class='invite-preview-wrapper loading-wrapper-full'>
+    <div class='valign-wrapper'>
+      <div class='valign invite-preview-valign'>
+        <p class='invite-form-heading'><img src='icons/icon-email-sent-white@3x.svg' height="37"></p>
+        <p id='send-preview-invite' class='bold-btn-txt invite-form-heading margin-bottom'>{{_ "guests.send_preview_invite"}}</p>
+        <div class='add-guest-form-wrapper'>
+          {{#if formError}}
+            <p class='login-form-error center-align' style='color: red; margin: 0;'>{{formError}}</p>
+          {{/if}}
+          <ul class='collection with-header'>
+            <li class='rsvp-btns-wrapper guest-collection-header clearfix row'>
+              <p id="invite-phone" class="rsvp-button col s6">
+                <input class="with-gap" type="radio"/>
+                <label for="choose-rsvp-yes">{{_ "guests.phone"}}</label>
+              </p>
+              <p id="invite-email" class="rsvp-button col s6">
+                <input class="with-gap" type="radio"/>
+                <label for="choose-rsvp-no">{{_ "guests.email"}}</label>
+              </p>
+            </li>
+          </ul>
+          <div class='preview-invite-input-wrapper'>
+            <input type='text' class='preview-invite-input' value="{{userPhoneNumber}}">
+            <img src="icons/icon-cancel-x-grey.svg" id="clear-preview-invite-input">
+          </div>
+
+          <button id='cancel-preview-invite' class='btn-preview-invite h-btn-large btn-half-width btn-left-half'>
+            {{_ "general.cancel"}}
+          </button>
+          <button id='send-preview-invite' class='btn-preview-invite h-btn-large btn-half-width btn-right-half'>
+            {{_ "guests.send"}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,102 @@
+<template name='Group'>
+  <div id='group-modal'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=groupModalTitle leftText=groupHeaderLeft leftTextClass='close-group'}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='scrollable group-modal-details-container'>
+      <p class='group-url'>
+        {{_ "guests.group.enter_url"}} <span class='group-link'>{{group.url}}</span>
+      </p>
+
+      <ul class='add-guest-btn-wrapper collection with-header'>
+        <li class='guest-collection-header'>
+          <button id='share-group-url' class='h-btn-large'>
+            {{_ "guests.group.share"}}
+          </button>
+          {{#if showGuestOptions}}
+            <button id='toggle-host' class='h-btn-large'>
+              {{toggleHostText}}
+            </button>
+          {{/if}}
+          {{#if showUninvite}}
+            <button id='delete-guest-btn' class='h-btn-large' data-event="Guest Uninvited.">{{_ "guests.group.uninvite"}}</button>
+          {{/if}}
+          {{#if showGuestOptions}}
+            <button id='toggle-hide-guest' class='h-btn-large'>
+              {{toggleButtonText}}
+            </button>
+          {{/if}}
+        </li>
+      </ul>
+
+      {{#autoForm id='group-limit-form' collection='Groups' doc=group type='update'}}
+        {{> InputWrapper input='limit' type='text' disabled=true label=groupLimitTitle}}
+        <span class="up"></span>
+        <span class="down"></span>
+      {{/autoForm}}
+
+      {{#unless activeGroup}}
+        {{#if nonSelfInvite}}
+          {{#with nonSelfInvite}}
+            {{#autoForm
+              id='guest-info-form' collection='Invites' doc=nonSelfInvite type='update'}}
+              {{> InputWrapper input='firstName' label=firstnameTitle disabled=true}}
+              {{> InputWrapper input='lastName' label=lastnameTitle disabled=true}}
+              {{> InputWrapper input='phone' label=numberTitle disabled=true}}
+              {{> InputWrapper input='email' label=emailTitle disabled=true}}
+            {{/autoForm}}
+          {{/with}}
+        {{/if}}
+      {{/unless}}
+
+      <ul class='collection with-header guest-lists-flex'>
+        {{#if group.attendingGuests.count}}
+          {{> CategoryHeader heading='Attending' subheading=group.attendingGuests.count}}
+
+          {{#each group.attendingGuests}}
+            {{> PersonListItem identifier=fullName}}
+          {{/each}}
+        {{/if}}
+
+        {{#if group.notAttendingGuests.count}}
+          {{> CategoryHeader heading='Not Attending' subheading=group.notAttendingGuests.count}}
+
+          {{#each group.notAttendingGuests}}
+            {{> PersonListItem identifier=fullName}}
+          {{/each}}
+        {{/if}}
+
+        {{#if group.noReplyGuests.count}}
+          {{> CategoryHeader heading='No Reply' subheading=group.noReplyGuests.count}}
+
+          {{#each group.noReplyGuests}}
+            {{> PersonListItem identifier=fullName}}
+          {{/each}}
+        {{/if}}
+      </ul>
+
+      {{#if group.canShowResendInvite}}
+        <ul class='collection with-header resend-wrapper'>
+          <li class='guest-collection-header'>
+            {{#if resendingInvite}}
+              <button id='resend-invite-btn' disabled='disabled' class='h-btn-large' data-event="Invitaion Resent To Guest">
+                {{> Loading classNames='loading-btn' wrapperId='loading-btn-wrapper'}}
+              </button>
+            {{else}}
+              <button id='resend-invite-btn' class='h-btn-large' data-event="Invitaion Resent To Guest">
+                {{resendButtonText}}
+              </button>
+            {{/if}}
+          </li>
+        </ul>
+      {{/if}}
+    </div>
+  </div>
+</template>

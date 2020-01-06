@@ -1,0 +1,57 @@
+<template name='Location'>
+  <div class='location-search-container'>
+    <img class='location-search-icon' src='/icons/icon-search-black@2x.png'>
+    <input
+      id='search'
+      class='location-search-input'
+      type='text'
+      placeholder='{{_ "activity_add.add_location.search_venue"}}'
+      autocomplete='off'>
+  </div>
+
+  <ul class='collection location-results-collection'>
+    {{#if showForm}}
+      {{#autoForm
+        id='address-form' schema='ActivityAddressSchema' type='update'
+        doc=currentActivity collection='Activities'
+      }}
+        {{> InputWrapper input='address.locationName' label=locationTitle }}
+        {{> InputWrapper input='address.address1' label=address1Title }}
+        {{> InputWrapper input='address.address2' label=address2Title }}
+        {{> InputWrapper input='address.city' label=cityTitle }}
+        {{> InputWrapper input='address.state' label=stateTitle }}
+        {{> InputWrapper input='address.zipCode' label=zipcodeTitle }}
+
+        <li class='guest-collection-header choose-location-wrapper'>
+          <button id='address-form-submit' type='submit' class='h-btn-large'>
+            {{_ "activity_add.add_location.use_location"}}
+          </button>
+        </li>
+      {{/autoForm}}
+
+    {{else}}
+
+      <li class='collection-item location-item' id='add-location-prompt'>
+        <img class='custom-location-icon' src='/icons/icon-flag-black@2x.png'>
+        <span class='add-location-prompt-heading'>{{_ "activity_add.add_location.add_custom"}}</span><br>
+        {{_ "activity_add.add_location.your_home"}}
+      </li>
+
+      {{#each customlocation}}
+         <li class='collection-item custom-nearby-result location-item'>
+           <span class='nearby-result-heading'>{{address.locationName}}</span><br>
+           <img class='location-result-icon' src='/icons/map-pin-black@2x.png'>
+           {{address.address1}} {{#if address.address2}}, {{address.address2}}, {{address.city}}, {{address.state}}, {{address.zipCode}} {{/if}}
+         </li>
+      {{/each}}
+
+      {{#each nearbyResults}}
+        <li class='collection-item nearby-result location-item'>
+          <span class='nearby-result-heading'>{{name}}</span><br>
+          <img class='location-result-icon' src='/icons/map-pin-black@2x.png'>
+          {{formatted_address}}
+        </li>
+      {{/each}}
+    {{/if}}
+  </ul>
+</template>

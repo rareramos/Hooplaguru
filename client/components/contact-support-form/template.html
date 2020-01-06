@@ -1,0 +1,77 @@
+<template name='ContactSupportForm'>
+  <div class='contact-support-modal ea-modal'>
+  <div class='navbar-fixed'>
+    <nav class=ea-modal-nav>
+      <div class='nav-wrapper'>
+        {{> ModalHeader
+          leftIcon='/icons/icon-cancel-x-black@2x.png'
+          title=getContactSupport leftIconClass='contact-left-header left-header-icon'
+        }}
+      </div>
+    </nav>
+  </div>
+
+  <!--<div class='modal-subheading'>
+    <div class='modal-subheading-inner'>
+      <h5>Your Details</h5>
+    </div>
+  </div>-->
+
+  {{#autoForm
+    id='contact-support-form' collection='Meteor.users' schema='Schemas.ContactSupportForm'}}
+    <!--{{> InputWrapper input='emails' tabindex='2' label=getEmailLable value=getEmail }}
+    {{> InputWrapper input='subject' tabindex='3' label=getSubject}}
+    {{> InputWrapper input='message' tabindex='4' label=getMessage textarea=true}}-->
+
+    <div class="row">
+      <div class="ea-input input-field col s12">
+        <input type="text" name="emails" id="emails" autocapitalize="true" autocorrect="on" class="standard-input" tabindex="2" required="" data-schema-key="emails">
+        <label for="emails">{{_ "contact_support.email"}}</label>
+        {{#if getEmailWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i>
+          {{_ "contact_support.email_error"}}  
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="ea-input input-field col s12">
+        <input type="text" name="subject" id="subject" autocapitalize="true" autocorrect="on" class="standard-input" tabindex="3" required="" data-schema-key="subject">
+        <label for="subject">{{_ "contact_support.subject"}}</label>
+        {{#if getSubjectWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i>
+          {{_ "contact_support.subject_error"}}  
+        </div> 
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="ea-input input-field col s12">
+        <textarea name="message" id="message" class="materialize-textarea ea-textarea standard-textarea" tabindex="4" required="" data-schema-key="message"></textarea>
+        <label for="message">{{_ "contact_support.message"}}</label>
+        {{#if getMessageWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i>
+          {{_ "contact_support.message_error"}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+  {{/autoForm}}  
+  
+
+
+
+  <ul class='collection'>
+    <li class='guest-collection-header'>
+      <button id='send-ticket' type='submit' class='h-btn-large' data-event="Contact Support Ticket Generated.">{{_ "contact_support.send"}}</button>
+    </li>
+  </ul>
+  
+  </div>
+</template>

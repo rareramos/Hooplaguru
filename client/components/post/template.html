@@ -1,0 +1,61 @@
+<template name='Post'>
+  <li class='collection-item wall-collection-item {{#if importantPost}}post-important{{/if}}'>
+
+    {{#if isDeletable}}
+      <img class='delete-post' src='/icons/icon-cancel-x-black@2x.png' data-event="Message Deleted From Wall.">
+    {{/if}}
+
+    <h6>
+      {{#if importantPost}}
+        <img class='post-important-icon' src='icons/icon-announce-wall@2x.png'>
+      {{/if}}
+      {{username}}
+      <span class='wall-secondary-content'>{{timeAgoPosted}}</span>
+    </h6>
+
+    <p class='wall-collection-text'>{{breakLines body}}</p>
+
+  </li>
+
+  {{#if image}}
+    <div class="row wall-post-row">
+      <div class="col">
+        <div class="post-listing">
+        {{#if image.uploadStatus}}
+          <div id="meida_loader_{{image._id}}">
+            <div class="wall-loaderDiv">
+              {{> Loader}}
+            </div>
+          </div>
+        {{/if}}
+        {{> Image image=image width=image.width height=image.height crop='fit' className="wall-post-image" postId=this._id}}
+        </div>
+      </div>
+    </div>
+
+    <div class='clearfix post-prompts'>
+      {{#if isCordova}}
+        <span class='post-prompt share'>
+          <img class='post-share-icon' src='/icons/icon-share-arrow-black@2x.png'>
+          {{_ "wall.share"}}
+        </span>
+      {{/if}}
+      <span class='post-prompt comment'>
+        <img class='post-comment-icon' src='/icons/icon-comment-black@2x.png'>
+        {{commentPrompt commentCount}}
+      </span>
+
+      <span class='post-prompt likes'>
+        {{#if likedImg}}
+          <img width="16px" class="post-prompt-likes" src="/icons/icon-like-black.png" />        
+        {{else}}
+          <img width="16px" class="post-prompt-likes" src="/icons/icon-like-ouline.png" />
+        {{/if}}
+        {{likesCount}}
+      </span>
+    </div>
+  {{/if}}
+
+
+
+</template>

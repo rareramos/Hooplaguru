@@ -1,0 +1,40 @@
+.add-media-lable {
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+}
+#upload-field, #upload-field-video{
+	float: left;
+	width: 100%;
+	margin-top:10px;
+}
+.add-media-li {
+	padding-bottom: 0px !important;
+    padding-top: 0 !important;
+}
+.formUploadError {
+	color: #F44336 !important;
+	clear: both;
+	margin-bottom: 0px;
+}
+.universe-autoform-select .selectize-input input {
+	min-height: 25px !important;
+	height: auto;
+}
+.selectize-control.multi .selectize-input [data-value] {
+	float:left;
+}
+
+.add-media-li .row .col.s12{
+	padding:0;
+	margin-top:10px;
+}
+.universe-autoform-select .selectize-input input {
+	float:left;
+}
+.universe-autoform-select .selectize-dropdown {
+	text-align: left;
+}
+.universe-autoform-select-placeholder {
+	float: left;
+}

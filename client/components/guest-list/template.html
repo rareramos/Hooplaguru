@@ -1,0 +1,142 @@
+<template name='GuestList'>
+  <ul class='collection with-header'>
+
+
+    {{#if currentEvent.guestCount}}
+      
+      {{> GuestListHeader yesGuests=currentEvent.totalAttendingCount}}
+      <div class="flexbox">
+        <div class="checkbox-container guestlist-checkbox width-50" data-event="Push Notification Toggled.">
+           <p class="checkbox-label">
+             {{#if isPushEnabled}}
+               <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+             {{else}}
+               <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+             {{/if}} 
+             <span class="checkbox-text">{{_ "guests.enable_push"}}</span>
+           </p>
+         </div>
+
+         <div class="checkbox-container sms-checkbox width-50" data-event="SMS Notification Toggled.">
+           <p class="checkbox-label">
+             {{#if isSMSNotification}}
+               <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+             {{else}}
+               <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+             {{/if}} 
+             <span class="checkbox-text">{{_ "guests.sms_notification"}}</span>
+           </p>
+         </div>
+       </div>
+       <div class="flexbox">
+         <div class='checkbox-container calendar-checkbox width-50' data-event="Sync Calendar Toggled.">
+          <p class='checkbox-label'>
+          
+            <img class='checkbox-icon' src='{{isSyncCalendar}}'>
+            <span class='checkbox-text'>{{_ "guests.sync_calendar"}}</span>
+          </p>
+         </div>
+        
+         <div class='checkbox-container public-checkbox width-50' data-event="Public Event Toggled.">
+          <p class='checkbox-label'>
+          
+            <img class='checkbox-icon' src='{{isPublicEvent}}'>
+            <span class='checkbox-text'>{{publicText}}</span>
+          </p>
+         </div>
+       </div>
+
+      {{#if publicEvent}}
+        {{> CategoryHeader heading=groupHeader subheading=currentEvent.publicGroupsCount}}
+        {{#each currentEvent.publicGroups}}
+          {{> PersonListItem identifier=name context=this group=true leftArrow=true}}
+        {{/each}}
+      {{/if}}
+
+      {{#if currentEvent.uninvitedCount}}
+        {{> CategoryHeader heading=notInviteHeader subheading=currentEvent.uninvitedCount }}
+
+        {{#each currentEvent.uninvitedGuests}}
+          {{> PersonListItem identifier=fullName context=this leftArrow=true}}
+        {{/each}}
+      {{/if}}
+
+        <li class='guest-collection-header'>
+          <a id='open-preview-invite' class='guest-collection-header-text underline'>
+            <p>{{_ "guests.send_preview"}}</p>
+          </a>
+
+          {{#if currentEvent.uninvitedCount}}
+            <a id='outstanding-invites-btn' class='btn h-btn-large send-outstanding-invites {{#if isSending}}disabled{{/if}}' data-event="Invitaion Sent To Guest">
+              {{#if isSending}}
+                {{_ "guests.sending"}}
+              {{else}}
+                {{_ "guests.send_invites_to"}} {{currentEvent.uninvitedCount}} {{checkGuestMoreOne}}
+              {{/if}}
+            </a>
+          {{/if}}
+        </li>
+
+      {{#if currentEvent.yesCount}}
+        {{> CategoryHeader heading=yesHeader subheading=currentEvent.yesCount }}
+
+        {{#each currentEvent.yesGuests}}
+          {{> PersonListItem
+            identifier=fullName
+            context=this
+            leftArrow=true
+            hiddenPersonClass='gray-text'
+          }}
+        {{/each}}
+      {{/if}}
+
+      {{#if currentEvent.noCount}}
+        {{> CategoryHeader heading=noHeader subheading=currentEvent.noCount }}
+
+        {{#each currentEvent.noGuests}}
+          {{> PersonListItem identifier=fullName context=this leftArrow=true}}
+        {{/each}}
+      {{/if}}
+
+      {{#if currentEvent.noReplyCount}}
+        {{> CategoryHeader heading=noreplyHeader subheading=currentEvent.noReplyCount}}
+        <li class="guest-collection-header">
+          <a id='resend-noreply' class='btn h-btn-large resend-noreply {{#if isSendingNoReply}}disabled{{/if}}' data-event="Invitaion Resent To Guest">
+            {{#if isSendingNoReply}}
+              {{_ "guests.sending"}}
+            {{else}}
+              {{_ "guests.group.resend_invite"}}
+            {{/if}}
+          </a>
+        </li>
+        {{#each currentEvent.noReplyGuests}}
+          {{> PersonListItem identifier=fullName subtext=mailStatus context=this}}
+        {{/each}}
+      {{/if}}
+
+    {{else}}
+
+      <li class='collection-item guest-list-placeholder'>
+        <p class='guest-placeholder-txt'>
+          {{{_ "guests.event_created"}}}
+        </p>
+      </li>
+      <li class='guest-collection-header'>
+        <a class='h-btn-large add-guests-btn'>{{_ "guests.add_guest"}}</a>
+      </li>
+
+      {{> CategoryHeader heading=groupHeader subheading=currentEvent.publicGroupsCount}}
+
+      {{#each currentEvent.publicGroups}}
+        {{> PersonListItem identifier=name context=this group=true leftArrow=true}}
+      {{/each}}
+
+      <li class='guest-collection-header'>
+        <a id='open-preview-invite' class='guest-collection-header-text underline'>
+          <p>{{_ "guests.send_preview"}}</p>
+        </a>
+      </li>
+    {{/if}}
+    {{checkEventIsDraft}}
+  </ul>
+</template>

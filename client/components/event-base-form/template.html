@@ -1,0 +1,68 @@
+<template name='EventBaseForm'>
+  {{#autoForm
+    id='event-base-form' collection='Events' schema='Schemas.EventBase'
+    type='update' doc=currentEvent class='col s12'
+  }}
+    <!--{{> InputWrapper input='title' tabindex='1' label=eventTitle}}-->
+    <div class="row">
+      <div class="ea-input input-field col s12">
+        <input type="text" name="hostName" id="hostName" autocapitalize="true" autocorrect="on" class="standard-input" tabindex="1" required="" data-schema-key="hostName" value="{{eventHostName}}">
+        <label for="hostName" class="">{{_ "event_add.host_name"}}</label>
+        {{#if eventHostNameInfo}}
+        <div class="blue-text">
+          <i class="mdi-action-info"></i>
+            {{_ "event_add.host_info"}}
+        </div>
+        {{/if}}
+        {{#if eventHostNameWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i>
+            {{_ "event_add.event_host_error"}}
+        </div>
+        {{/if}}
+      </div>
+
+      <div class="ea-input input-field col s12">
+        <input type="text" name="title" id="eventTitle" autocapitalize="true" autocorrect="on" class="standard-input" tabindex="2" required="" data-schema-key="title" value="{{currentEvent.title}}">
+        <label for="title" class="">{{_ "event_add.event_title"}}</label>
+        {{#if eventTitleWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i>
+            {{_ "event_add.event_title_error"}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    {{> InputWrapper input='description' tabindex='2' label=eventDescription textarea=true}}
+  {{/autoForm}}
+
+  <div class='checkbox-container plus-one'>
+    <p class='checkbox-label'>
+    {{#if currentEvent}}
+      {{#if currentEvent.isPlusOne}} 
+        <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+      {{else}}
+        <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+      {{/if}}
+    {{else}}
+      <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+    {{/if}}
+      <span class='checkbox-text'>{{_ "event_add.event_guest_invite"}}</span>
+    </p>
+  </div>
+  <div class='checkbox-container hide-guest-list'>
+      <p class='checkbox-label'>
+    {{#if currentEvent}}
+      {{#if currentEvent.hideGuestList}}
+        <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+      {{else}}
+        <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+      {{/if}}
+    {{else}}
+      <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+    {{/if}}
+      <span class='checkbox-text'>{{_ "event_add.event_hide_guest"}}</span>
+    </p>
+  </div>
+</template>

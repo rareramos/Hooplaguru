@@ -1,0 +1,12 @@
+.countryCodeInput {
+  padding-left: 0 !important;
+}
+.phone-input {
+	padding: 0 !important;
+}
+#countryCode {
+	text-align: center;
+}
+.rsvp-event-header {
+	padding-top: 20px;
+}

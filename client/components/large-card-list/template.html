@@ -1,0 +1,9 @@
+<template name='LargeCardList'>
+  <div class='swiper-slide tall-slide'>
+    <div class='bounce-scroll-slide'>
+      {{#each listings}}
+        {{> Template.dynamic template=../cardTemplate}}
+      {{/each}}
+    </div>
+  </div>
+</template>

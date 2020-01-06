@@ -1,0 +1,23 @@
+.guest-collection-header-border {
+	border-bottom: 1px solid #e0e0e0;
+}
+.msg-listing {
+	.msg {
+		padding: 5px 15px;
+		border-bottom: 1px solid #e0e0e0;
+		cursor: pointer;
+		
+		&.read {
+			opacity: 0.5;
+		}
+		
+		.msg-icon {
+			float: left;
+			padding-right:15px;
+		}
+		.name {
+			font-family: 'Brandon_Bold';
+			color: $primary-color;
+		}
+	}
+}

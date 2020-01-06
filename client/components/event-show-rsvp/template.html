@@ -1,0 +1,77 @@
+<template name='EventsShowRsvp'>
+  <ul class='collection with-header'>
+    <li class='rsvp-btns-wrapper guest-collection-header clearfix row'>
+      <p id="choose-rsvp-yes" class="rsvp-button col s6" data-event="Accept Invitation">
+        <input class="with-gap" type="radio"/>
+        <label for="choose-rsvp-yes">{{_ "guests.iam_going"}}</label>
+      </p>
+      <p id="choose-rsvp-no" class="rsvp-button col s6" data-event="declain Invitation">
+        <input class="with-gap" type="radio"/>
+        <label for="choose-rsvp-no">{{_ "guests.cant_makeit"}}</label>
+      </p>
+    </li>
+
+    {{#if rsvpYes}}
+    {{#if thisEvent.isPlusOne}}
+      <div class='checkbox-container rsvp-checkboxes'>
+        <p class='checkbox-label'>
+          {{#if thisGuest.bringingPlusOne}}
+            <img class='checkbox-icon' src='/icons/form-checkbox-on@2x.png'>
+          {{else}}
+            <img class='checkbox-icon' src='/icons/form-checkbox-off@2x.png'>
+          {{/if}}
+          <span class='checkbox-text'>{{_ "guests.iam_bringing"}}</span>
+        </p>
+      </div>
+    {{/if}}
+    {{/if}}
+
+   <div class='checkbox-container push-enable-checkbox' data-event="Push Toggled.">
+      <p class='checkbox-label'>
+      
+        <img class='checkbox-icon' src='{{isEnablePush}}'>
+        <span class='checkbox-text'>{{_ "guests.enable_push"}}</span>
+      </p>
+    </div>
+
+    <div class='checkbox-container sms-notification-checkbox' data-event="SMS Notification Toggled.">
+      <p class='checkbox-label'>
+      
+        <img class='checkbox-icon' src='{{isNotificationSMS}}'>
+        <span class='checkbox-text'>{{_ "guests.sms_notification"}}</span>
+      </p>
+    </div>
+
+     <div class='checkbox-container calendar-checkbox' data-event="Sync Calendar Toggled.">
+      <p class='checkbox-label'>
+      
+        <img class='checkbox-icon' src='{{isSyncCalendar}}'>
+        <span class='checkbox-text'>{{_ "guests.sync_calendar"}}</span>
+      </p>
+    </div>
+    {{#if isHideGuestList}}
+    {{> CategoryHeader heading=whosGoingTitle subheading=currentEvent.yesCount }}
+
+    {{#each currentEvent.yesGuestsVisible}}
+      {{> PersonListItem identifier=fullName context=this}}
+    {{/each}}
+    {{/if}}
+
+    {{#if thisGuest}}
+      {{#if isHideGuestList}}
+      {{#if thisGuest.isAttending}}
+        <li class='guest-collection-header'>
+          <button id='toggle-hide-guest' class='h-btn-large' data-event="Hide Me In The Guest List Toggled.">
+            {{toggleButtonText}}
+          </button>
+        </li>
+      {{/if}}
+      {{/if}}
+      <li id='delete-event-btn' class='guest-collection-header delete-event-wrapper' data-event="Removed Event From List.">
+        <button class='h-btn-large'>
+          {{_ "guests.remove_event_list"}}
+        </button>
+      </li>
+    {{/if}}
+  </ul>
+</template>

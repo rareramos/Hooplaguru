@@ -1,0 +1,83 @@
+  <template name='Details'>
+  <div class='swiper-slide short-slide'>
+
+    <div class='bounce-scroll-slide'>
+      <div class='img-preview-wrapper event-show-image event-details-page'>
+        <div id='{{id}}' class='card small image-preview-card event-details-preview'>
+          <div class='card-image'>
+            {{#if checkisVideo}}
+            <div class="vide-play-image" id="{{currentEvent._id}}">
+              <img id="img_{{currentEvent._id}}" src="/images/icon-play.png">
+            </div>
+            {{/if}}
+            {{> Image image=currentEvent}}
+            <div class="background-opacity" style="background: -webkit-linear-gradient({{themeCss.gradient}});"></div>
+            <h3 class='card-title' style='color: {{themeCss.color}};'>{{currentEvent.title}}</h3>
+          </div>
+
+        {{#if canEditEvent}}
+          <a id='event-form-btn' class='edit-event-btn h-button img-preview-top-right h-btn-floating h-btn-large white event-form-btn-inner'>Edit Event</a>
+        {{/if}}
+        </div>
+      </div>
+
+      <ul class='event-details-collection'>
+        {{#if currentEvent.description}}
+          <li class='collection-item'>
+            <h4 class='event-description'>{{breakLines currentEvent.description}}</h4>
+          </li>
+        {{/if}}
+
+        {{> CategoryHeader heading=hostTitle}}
+
+        {{#each currentEvent.hosts}}
+          <div class='host-info-wrapper'>
+            <li class='collection-item collection-item-top'>
+              <h4>{{fullName}}</h4>
+
+              {{#if role}}
+                <h5>{{role}}</h5>
+              {{/if}}
+
+              <div class='host-icons-container'>
+                {{#if email}}
+                  <img class='host-email-icon' src='/icons/icon-host-email-black@2x.png'>
+                {{else}}
+                  {{#unless isPersonalMessages}}
+                    <img class='host-persona-msg-icon' src='/icons/icon-host-email-black@2x.png'>
+                  {{/unless}}
+                {{/if}}
+
+                {{#if phone}}
+                  {{#if isPhone}}
+                     <img class='host-sms-icon' src='/icons/icon-host-sms-black@2x.png'>
+                     <img class='host-phone-icon' src='/icons/host-phone-black@2x.png'>
+                   {{/if}}
+
+                   {{#if isTablet}}
+                     <img class='host-sms-icon' src='/icons/icon-host-sms-black@2x.png'>
+                   {{/if}}
+                {{/if}}
+              </div>
+            </li>
+          </div>
+        {{/each}}
+
+        {{> CategoryHeader heading=scheduleTitle}}
+
+        <div class='schedule-wrapper'>
+          {{#each currentEvent.schedule}}
+            <div class='activity-details-wrapper'>
+              {{> ActivityDetails}}
+            </div>
+          {{/each}}
+        </div>
+        <!--<li class='guest-collection-header calendar-btn-wrapper'>-->
+          <!--<a class='calendar-btn btn-large'>-->
+            <!--Add event to my calendar-->
+          <!--</a>-->
+        <!--</li>-->
+      </ul>
+    </div>
+  </div>
+</template>

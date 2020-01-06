@@ -1,0 +1,17 @@
+.rsvp-btns-wrapper.row .rsvp-button.col.s6 {
+  text-align: left;
+  padding-left: 0;
+}
+
+.rsvp-button label {
+  color: black;
+}
+
+.rsvp-button [type="radio"].with-gap:checked + label:before {
+  border: 2px solid black;
+}
+
+.rsvp-button [type="radio"].with-gap:checked + label:after {
+  border: 2px solid black;
+  background-color: black;
+}

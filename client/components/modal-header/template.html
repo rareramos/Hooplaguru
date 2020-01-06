@@ -1,0 +1,21 @@
+<template name='ModalHeader'>
+  <div class='swiper-slide'>
+    <h6 class='event-form-nav-heading brand-logo center {{headerClassNames}}'>{{title}}</h6>
+
+    {{#if leftText}}
+      <span class='modal-header-left-txt {{leftTextClass}}'>
+        {{leftText}}
+      </span>
+    {{/if}}
+
+    {{#if leftIcon}}
+      <img class='{{leftIconClass}}' src='{{leftIcon}}'>
+    {{/if}}
+
+    {{#if rightText}}
+      <span class='right-header modal-header-right-txt {{rightClass}}'  data-event='{{dataEvents dataEvent}}'>
+        {{rightText}}
+      </span>
+    {{/if}}
+  </div>
+</template>

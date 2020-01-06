@@ -1,0 +1,45 @@
+<template name='EventCard'>
+  <div class='card event-card' style='background-color:gray;' data-event-list='{{_id}}'>
+    <div class='card-image card-image-large event-images-card'>
+      {{#if checkisVideo}}
+      <div class="vide-play-image" id="{{this._id}}">
+        <img id="img_{{this._id}}" src="images/icon-play.png">
+      </div>
+      {{/if}}
+      {{> Image image=this}}
+      <div class="background-opacity" style="background: -webkit-linear-gradient({{themeCss.gradient}});"></div>
+
+      <span class='card-title event-card-title' style='color: {{themeCss.color}};'>
+        <h3>{{title}}</h3>
+       <p>
+          {{formatActivityDate eventStartTime eventEndTime}}
+          <!-- {{#if isUpcoming}}
+          <span class='activity-details-timespan'>
+            {{formatActivityTimeForCard eventStartTime eventEndTime}}
+          </span>
+          {{/if}} -->
+        </p>
+      </span>
+
+      <button class='event-status-btn' tabindex="-1">
+        {{#if isUpcoming}}
+          {{#if this.saveAsDraft}}
+            {{_ "events.my_draft_event"}}
+          {{else}}
+            {{eventStatusText}}
+            {{#if attendingThisEvent}}
+              <img class='event-status-icon' src='/icons/icon-check-white@2x.png'>
+            {{/if}}
+          {{/if}}
+        {{else}}
+            {{#if this.saveAsDraft}}
+              {{_ "events.my_draft_event"}}
+            {{else}}
+            {{_ "events.past_event"}}
+            {{/if}}
+        {{/if}}
+      </button>
+      
+    </div>
+  </div>
+</template>

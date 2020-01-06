@@ -1,0 +1,97 @@
+<template name='InputWrapper'>
+  <div id='{{id}}' class='row' style='{{#if hidden}}display: none{{/if}}'>
+    <div class='ea-input input-field col s12'>
+
+      {{#if customized}}
+
+        {{#if textarea}}
+          {{> afFieldInput
+            name=input
+            id=input
+            type='textarea'
+            class='materialize-textarea ea-textarea standard-textarea'
+            value=value
+            tabindex=tabindex
+            disabled=disabled
+          }}
+        {{/if}}
+
+        {{#if tel}}
+          {{> afFieldInput
+            name=input
+            id=input
+            class="input-mask-tel"
+            type='tel'
+            value=value
+            tabindex=tabindex
+            disabled=disabled
+          }}
+        {{/if}}
+
+        {{#if datetime}}
+          {{> afFieldInput
+            name=input
+            id=input
+            type='datetime-local'
+            value=value
+            tabindex=tabindex
+            disabled=disabled
+          }}
+        {{/if}}
+
+        {{#if nonstandard}}
+          {{> afFieldInput
+            name=input
+            id=input
+            autocapitalize='none'
+            autocorrect='off'
+            value=value
+            tabindex=tabindex
+            disabled=disabled
+          }}
+        {{/if}}
+
+      {{else}}
+
+        {{#if type}}
+          {{> afFieldInput
+            name=input
+            id=input
+            autocapitalize='true'
+            autocorrect='on'
+            class='standard-input'
+            tabindex=tabindex
+            value=value
+            disabled=disabled
+            type=type
+          }}
+        {{else}}
+          {{> afFieldInput
+            name=input
+            id=input
+            autocapitalize='true'
+            autocorrect='on'
+            class='standard-input'
+            tabindex=tabindex
+            value=value
+            disabled=disabled
+          }}
+        {{/if}}
+
+      {{/if}}
+
+      <label for='{{input}}'>{{label}}</label>
+
+      {{#if afFieldIsInvalid name=input}}
+        <div class='red-text'>
+          <i class='mdi-alert-warning'></i>
+          {{#if customError}}
+            {{customError}}
+          {{else}}
+            {{afFieldMessage name=input}}
+          {{/if}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>

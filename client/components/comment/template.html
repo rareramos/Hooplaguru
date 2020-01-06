@@ -1,0 +1,16 @@
+<template name='Comment'>
+  <li class='collection-item wall-collection-item {{#if importantPost}}post-important{{/if}}'>
+    <h6>
+      {{#if importantPost}}
+        <img class='post-important-icon' src='icons/icon-announce-wall@2x.png'>
+      {{/if}}
+      {{username}}
+      <span class='wall-secondary-content'>{{timeAgoPosted}}</span>
+    </h6>
+    <p class='wall-collection-text'>
+      {{_ "wall.commented_on"}} {{originalPost.username}}'s
+      {{> ImagePostLink post=originalPost}}
+    </p>
+    <p class='wall-collection-text'>{{breakLines body}}</p>
+  </li>
+</template> 

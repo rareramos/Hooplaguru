@@ -1,0 +1,61 @@
+.scrollable {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bold-btn-txt {
+  font: {
+    size: $h5-fontsize;
+    weight: bold;
+    font-family: 'Lato_Reg';
+  }
+  text-transform: uppercase;
+}
+
+.absolute-cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.offset-overlay {
+  top: $navbar-height;
+  bottom: 0;
+  background-color: $primary-color-light;
+}
+
+.transparent-btn-bg {
+  color: $primary-color-light;
+  background: $ea-primary-color-tinted;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.background-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.link-styles {
+  color: $link-blue;
+  font-family: 'Lato_Light';
+}
+
+.disabled-btn {
+  background-color: $disabled-background;
+  box-shadow: none;
+  color: $disabled-text-color;
+  cursor: default;
+
+  &#decide-later {
+    &[disabled=disabled] {
+      color: $disabled-text-color;
+    }
+  }
+}

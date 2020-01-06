@@ -1,0 +1,48 @@
+<template name='EventsMessagesDetails'>
+  <div id='msg-detail-modal' class='ea-modal'>
+    <div class='navbar-fixed'>
+      <nav class=ea-modal-nav>
+        <div class='nav-wrapper'>
+          {{> ModalHeader
+            leftIcon='/icons/icon-cancel-x-black@2x.png'
+            title=messageTitle leftIconClass='left-header left-header-icon'
+          }}
+        </div>
+      </nav>
+    </div>
+    <div class="userlistContainer">
+    {{#if oldConvo}}
+      {{userLists}}
+    {{else}}
+      {{#if newUserList}}
+        {{newUserList}}
+      {{else}}
+        <button id= "add-msg-btn" class='h-btn-large'>
+          {{_ "message.add_receipint"}}
+        </button>
+      {{/if}}
+    {{/if}}
+    </div>
+    <div class="messages-wrapper" id="messages-wapper">
+      {{#each msghirarchy}}
+        <div class="message {{postedByMe}}">
+        {{#if checkPost}}
+        <div><b>{{sender}} : </b></div>
+        {{/if}}
+          <div>{{message}}</div>
+          <div class="timeduration">{{timeAgoPosted}}</div>
+        </div>
+        
+      {{/each}}
+    </div>
+    <div id="wall-post-bottom"></div>
+    <form id='message-form'>
+      <textarea id='message-field' tabindex="-1" placeholder='{{_ "message.message_placeholder"}}'></textarea>
+      {{#if allowsend}}
+      <div class='post-form-icons wall-post-form-icons'>
+        <p class='post-form-submit' data-event="Message Sent.">{{_ "message.send"}}</p>
+      </div>
+      {{/if}}
+    </form>
+  </div>
+</template>

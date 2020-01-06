@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="35px" height="32px" viewBox="0 0 35 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>comments-bubble-bg-white@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M25.863369,27.3019591 C23.2264864,29.6049935 19.776198,31 16,31 C7.71390727,31 1,24.2842712 1,16 C1,7.71390727 7.71572875,1 16,1 C24.2860927,1 31,7.71572875 31,16 C31,18.5960162 30.3408134,21.0377135 29.1807263,23.166974 L32.2849573,29.6438273 L25.863369,27.3019591 Z" id="comments-bubble-bg-white" stroke-opacity="0.4" stroke="#838383" fill-opacity="0.5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

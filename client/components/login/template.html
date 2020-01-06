@@ -1,0 +1,97 @@
+<template name='Login'>
+  <div class='swiper-container login-swiper'>
+    <!--<div class='parallax-bg' style='background-image:url("images/background.jpg")' data-swiper-parallax='0%'></div>-->
+    <div class='parallax-bg' data-swiper-parallax='0%'></div>
+
+    {{#if firstTime}}
+    <div class='swiper-wrapper'>
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          <div class='valign-wrapper'>
+            <div class='valign center-align'>
+              <div class='logo-container'>
+                <img src='images/logo-landing-screen@2x.png'>
+                <h4 class='onboard-heading'>Simple, powerful event planning</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class='onboard-footer center-align'>
+            <img src='images/swipe-to-continue.png'>
+          </div>
+        </div>
+      </div>
+
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          <h4 class='onboard-heading'>One place for all details</h4>
+          <p class='onboard-details'>Say goodbye to the hassle of crawling emails, texts, and social networks.</p>
+          <div class='onboard-margin'>
+            <img class='onboard-img' src='images/details.jpg'>
+          </div>
+        </div>
+      </div>
+
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          <h4 class='onboard-heading'>The first ever before-party</h4>
+          <p class='onboard-details'>Chat about who's coming, what to wear, and how to get there before the main event.</p>
+          <div class='onboard-margin'>
+            <img class='onboard-img' src='images/the-wall.jpg'>
+          </div>
+        </div>
+      </div>
+
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          <h4 class='onboard-heading'>Replay the moments</h4>
+          <p class='onboard-details'>Photos and videos conveniently collected for easy sharing.</p>
+          <div class='onboard-margin'>
+            <img class='onboard-img' src='images/photos.jpg'>
+          </div>
+        </div>
+      </div>
+
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          <h4 class='onboard-heading'>Be in the know</h4>
+          <p class='onboard-details'>Build your guest list, send invites, and track RSVPs easily.</p>
+          <div class='onboard-margin'>
+            <img class='onboard-img' src='images/guest-list.jpg'>
+          </div>
+        </div>
+      </div>
+
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          {{> Template.dynamic template=loginTemplate}}
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class='swiper-wrapper'>
+      <div class='swiper-slide'>
+        <div class='onboarding'>
+          {{> Template.dynamic template=loginTemplate}}
+        </div>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class='swiper-pagination'></div>
+    <div class='swiper-pagination-gradient'></div>
+
+    {{#if overlay}}
+      <div class='loading-wrapper-full'>
+        <div class='valign-wrapper'>
+          <div class='valign center-align'>
+            {{> Template.dynamic template=overlay}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
+
+    {{getCurrentCountryCode}}
+    
+  </div>
+</template>

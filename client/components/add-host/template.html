@@ -1,0 +1,21 @@
+<template name='AddHost'>
+  {{#if currentEvent}}
+    {{#autoForm
+      id='add-host-form' collection='Invites' type='insert'
+    }}
+      {{> InputWrapper input='firstName' label='first name'}}
+      {{> InputWrapper input='lastName' label='last name'}}
+      {{> InputWrapper input='hostRole' label='Role'}}
+      {{> InputWrapper input='email' label='Email'}}
+      {{> InputWrapper input='phone' label='Phone' customError='Phone must be a valid phone number' tel=true}}
+
+      <ul class='collection edit-host-submit'>
+        <li id='host-form-submit' class='guest-collection-header'>
+          <button type='submit' class='h-btn-large host-form-submit-btn'>
+            Done
+          </button>
+        </li>
+      </ul>
+    {{/autoForm}}
+  {{/if}}
+</template>

@@ -1,0 +1,207 @@
+<template name='AddGuests'>
+  <div id='add-guests-modal'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=guestFormTitle leftIcon='/icons/icon-cancel-x-black@2x.png' leftIconClass='close-add-guests left-header-icon'}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+      {{#if isTouchDevice}}
+        <div class='add-guests-tabs-wrapper'>
+          <!-- <div class='guests-tabs-row row'>
+            {{#if contactsActiveClass}}
+              <div id='from-contacts' class='col s12 contacts-active'>
+                <h5 class='guests-tabs-text'>From Contacts</h5>
+              </div>
+            {{else}}
+              <div id='add-manually' class='col s12 add-manually-active'>
+                <h5 class='guests-tabs-text'>Add Manually</h5>
+              </div>
+            {{/if}}
+          </div> -->
+
+          {{#swiperSlides classNames='guest-tabs-swiper' options=guestSwiperOptions}}
+            <div class='swiper-slide guest-swiper-slide'>
+              <div class='bounce-scroll-slide'>
+                <div class='location-search-container'>
+                  <img class='location-search-icon' src='/icons/icon-search-black@2x.png'>
+                  <input id='search-contacts' tabindex="-1" class='location-search-input'
+                    type='text' placeholder='{{_ "guests.search_contact"}}'
+                    autocomplete='off' autocorrect="off">
+                </div>
+
+                <ul class='collection with-header contacts-collection'>
+                  {{#if visibleContacts.length}}
+                    <div class='checkbox-container select-all'>
+                      <p class='checkbox-label'>
+                        <img class='checkbox-icon' src='{{allSelectedIcon}}'>
+                        <span class='checkbox-text'>{{selectAllText}}</span>
+                      </p>
+                    </div>
+                  {{/if}}
+
+                  {{#each visibleContacts}}
+                    <div class='checkbox-container personal-contact' data-contact-id='{{_id}}'>
+                      <p class='checkbox-label'>
+                        <img class='checkbox-icon' src='{{checkboxIcon}}'>
+                        <span class='checkbox-text'>
+                          {{name.formatted}}<span style='float:right'>{{type}}</span>
+                        </span>
+                        <span class='checkbox-subtext'>{{value}}</span>
+                      </p>
+                    </div>
+                  {{/each}}
+
+                  {{#if moreToCome}}
+                    <div class="checkbox-container load-more load-more-btn-container">
+                      <a>
+                        <p>{{_ "guests.load_more"}}</p>
+                      </a>
+                    </div>
+                  {{/if}}
+                </ul>
+              </div>
+            </div>
+
+            <div class='swiper-slide guest-swiper-slide add-manually-slide'>
+              <div class='bounce-scroll-slide'>
+                {{#autoForm id='add-guest-form' schema='Schemas.GuestForm'}}
+                  {{> InputWrapper input='firstName' label=firstnameTitle rowClass='form-top-padded' autocorrect='off'}}
+                  {{> InputWrapper input='lastName' label=lastnameTitle rowClass='form-top-padded' autocorrect='off'}}
+
+                  <div class="row">
+                    <div class="ea-input input-field col s12">
+                      
+                      <p id="choose-phone" class="rsvp-button col s6">
+                        <input class="with-gap" type="radio" checked="checked" name="inviteType" value="phone" />
+                        <label for="choose-phone">{{_ "guests.phone"}}</label>
+                      </p>
+
+                      <p id="choose-email" class="rsvp-button col s6">
+                        <input class="with-gap" type="radio" name="inviteType" value="email" />
+                        <label for="choose-email">{{_ "guests.email"}}</label>
+                      </p>
+                      
+                    </div>
+                  </div>
+
+                  <div class="row form-top-phone">
+                    <div class="ea-input input-field col s12">
+                      <div class="col s2 countryCodeInput">
+                        <input type="text" name="countryCode" id="countryCode" autocapitalize="true" autocorrect="on" class="standard-input" required="" value="{{getCountryCode}}">
+                      </div>
+
+                      <div class="col s10 email-phone">
+                        <input type="text" name="emailOrPhone" id="emailOrPhone" autocapitalize="true" autocorrect="on" class="standard-input" data-schema-key="emailOrPhone">
+                        <label for="emailOrPhone" class=""></label>
+                      </div>
+                    </div>
+                  </div>
+                {{/autoForm}}
+
+                <ul class='add-guest-btn-wrapper collection with-header'>
+                  <li class='guest-collection-header'>
+                    <button id='add-guest-btn' class='h-btn-large' data-event="Guest Added Manually.">
+                      {{guestBtnText}}
+                    </button>
+                  </li>
+
+                  <li class='guest-collection-header done-adding-btn'>
+                    <button id='add-guest-btn' class='h-btn-large'>
+                      {{_ "guests.done_adding_guests"}}
+                    </button>
+                  </li>
+                </ul>
+                
+                {{#if guestAddedSucc}}
+                  <p class='login-form-error center-align' style='color: #53ECF5 !important;'><i class="mdi-action-info"></i>{{guestAddedSucc}}</p>
+                {{/if}}
+
+                {{#if formError}}
+                  <p class='login-form-error center-align' style='color: #F44336 !important;clear: both;'><i class="mdi-alert-warning"></i>{{formError}}</p>
+                {{/if}}
+
+              </div>
+            </div>
+          {{/swiperSlides}}
+        </div>
+        {{#if contactsActiveClass}}
+          <ul class='add-guest-btn-wrapper-collection collection'>
+            <li class='collection-item guest-collection-header'>
+              <button id='add-personal-contacts-btn' class='h-btn-large'>
+                {{addContactsButtonText}}
+              </button>
+            </li>
+          </ul>
+        {{/if}}
+
+      {{else}}
+
+        <div class='guest-swiper-slide'>
+          <div class='bounce-scroll-slide'>
+            {{#autoForm id='add-guest-form' schema='Schemas.GuestForm'}}
+              {{> InputWrapper input='firstName' label=firstnameTitle rowClass='form-top-padded'}}
+              {{> InputWrapper input='lastName' label=lastnameTitle rowClass='form-top-padded'}}
+
+              <div class="row">
+                <div class="ea-input input-field col s12">
+                  
+                  <p id="choose-phone" class="rsvp-button col s6">
+                    <input class="with-gap" type="radio" checked="checked" name="inviteType" value="phone" />
+                    <label for="choose-phone">{{_ "guests.phone"}}</label>
+                  </p>
+
+                  <p id="choose-email" class="rsvp-button col s6">
+                    <input class="with-gap" type="radio" name="inviteType" value="email" />
+                    <label for="choose-email">{{_ "guests.email"}}</label>
+                  </p>
+                  
+                </div>
+              </div>
+
+              <div class="row form-top-phone">
+                <div class="ea-input input-field col s12">
+                  <div class="col s2 countryCodeInput">
+                    <input type="text" name="countryCode" id="countryCode" autocapitalize="true" autocorrect="on" class="standard-input" required="" value="{{getCountryCode}}">
+                  </div>
+
+                  <div class="col s10 email-phone">
+                    <input type="text" name="emailOrPhone" id="emailOrPhone" autocapitalize="true" autocorrect="on" class="standard-input" data-schema-key="emailOrPhone">
+                    <label for="emailOrPhone" class=""></label>
+                  </div>
+                </div>
+              </div>
+
+            {{/autoForm}}
+
+            <ul class='add-guest-btn-wrapper collection with-header'>
+              <li class='guest-collection-header'>
+                <button id='add-guest-btn' class='h-btn-large' data-event="Guest Added Manually.">
+                  {{guestBtnText}}
+                </button>
+              </li>
+              <li class='guest-collection-header done-adding-btn'>
+                <button id='add-guest-btn' class='h-btn-large'>
+                  {{_ "guests.done_adding_guests"}}
+                </button>
+              </li>
+            </ul>
+            
+            {{#if guestAddedSucc}}
+              <p class='login-form-error center-align' style='color: #53ECF5 !important;'><i class="mdi-action-info"></i>{{guestAddedSucc}}</p>
+            {{/if}}
+
+            {{#if formError}}
+              <p class='login-form-error center-align' style='color: #F44336 !important;'><i class="mdi-alert-warning"></i>{{formError}}</p>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+  </div>
+
+   {{> Popup}}
+</template>

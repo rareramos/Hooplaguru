@@ -1,0 +1,87 @@
+<template name='EditActivity'>
+  {{#autoForm
+    id='edit-activity-form' schema='ActivityBaseSchema'
+    type='update' doc=currentActivity
+  }}
+
+    <!--{{> InputWrapper input='title' tabindex='11' label=activityTitle }}-->
+
+    <div class="row">
+      <div class="ea-input input-field col s12">
+
+        <input type="text" name="title" id="activityTitle" autocapitalize="true" autocorrect="on" class="standard-input" tabindex="11" required="" data-schema-key="title" value="{{currentActivity.title}}">
+        <label for="title" class="">{{_ "activity_add.activity_title"}}</label>
+        {{#if titleWarning}}
+        <div class="red-text">
+          <i class="mdi-alert-warning"></i> 
+            {{_ "activity_add.title_error"}} 
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class='ea-input row mock-input-row' id='start-time-row'>
+      <label>{{_ "activity_add.start"}}</label>
+      <span>{{formatDateInUTCWithToken currentActivity.startTime 'dddd, MMM D YYYY, h:mm a'}}</span>
+    </div>
+
+    {{#if datetimeWarning}}
+      <div class='red-text'>
+        <i class='mdi-alert-warning'></i>
+        {{_ "activity_add.start_error"}}
+      </div>
+    {{/if}}
+
+    <div class='ea-input row mock-input-row' id='end-time-row'>
+      <label>{{_ "activity_add.end"}}</label>
+      <span>{{formatDateInUTCWithToken currentActivity.endTime  'dddd, MMM D YYYY, h:mm a'}}</span>
+    </div>
+
+    <div class='ea-input row mock-input-row' id='location-row'>
+      <label>{{_ "activity_add.location"}}</label>
+      <span>{{currentActivity.address.locationName}}</span>
+    </div>
+
+    {{#if locationWarning}}
+      <div class='red-text'>
+        <i class='mdi-alert-warning'></i>
+        {{_ "activity_add.location_error"}}
+      </div>
+    {{/if}}
+    <div class="target-add pointer-cursor font-uppercase">
+      <h2>
+        {{_ "activity_add.additional_info"}}
+      </h2>
+    </div>
+    <div class="target-add-content">
+      <div class="collapsed-card activity-more-details" style="display: none">
+        {{> InputWrapper input='attire' label=dressCodeTitle tabindex='12' textarea=true}}
+        {{> InputWrapper input='transit' label=parkingTitle tabindex='13' textarea=true}}
+        <!--<div class='row mock-input-row' id='media-row'>-->
+          <!--<label>ADD MEDIA (OPTIONAL)</label>-->
+        <!--</div>-->
+        {{> InputWrapper input='notes' label=notesTitle tabindex='14' textarea=true}}
+      </div>
+    </div>
+
+    <ul class='collection'>
+      <li class='guest-collection-header'>
+        <button id='update-activity' type='submit' class='h-btn-large' data-event="{{editDataEvent}}" >
+          {{#if editMode}}
+            {{_ "activity_add.save_changes"}}
+          {{else}}
+            {{_ "activity_add.done"}}
+          {{/if}}
+        </button>
+      </li>
+
+      {{#if editMode}}
+        <li id='delete-activity-btn' class='guest-collection-header delete-activity-wrapper'>
+          <span class='transparent-btn' data-event="Activity Deleted.">
+            {{_ "activity_add.delete_activity"}}
+          </span>
+        </li>
+      {{/if}}
+    </ul>
+  {{/autoForm}}
+</template>

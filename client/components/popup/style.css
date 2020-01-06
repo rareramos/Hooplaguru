@@ -1,0 +1,29 @@
+
+.coutrycodelist {
+	 height: 50vh;
+    overflow-y: auto;
+}
+
+.coutrycodelist li {
+	border-bottom: 1px solid #9e9e9e;
+	margin-bottom: 10px;
+	padding: 0 !important;
+}
+
+.coutryname {
+	float: left;
+	width: 74% !important;
+}
+
+.coutrycode {
+	float: right;
+	text-align: right;
+	padding: 0 !important;
+}
+.searchbar {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.pc-container .pc-button {
+	margin-top: 10px !important;
+}

@@ -1,0 +1,74 @@
+<template name='Admin'>
+  <div class="row" style='background:white;'>
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#categories">Categories</a></li>
+        <li class="tab col s3"><a href="#cover-photos">Cover Photos</a></li>
+      </ul>
+    </div>
+
+    <div id="categories" class="col s12">
+      <button id='add-category-btn' class='btn'>Add a Category</button>
+
+      <ul class='collection'>
+        {{#each categories}}
+          <li class='collection-item'>
+            {{name}}
+            <button class='secondary-content btn edit-category-btn offset-top-margin'>
+              Edit
+            </button>
+          </li>
+        {{/each}}
+      </ul>
+
+      {{#if selectedCategoryDoc}}
+        {{#autoForm
+          collection='CoverPhotoCategories'
+          id='update-category-form'
+          type='update'
+          doc=selectedCategoryDoc
+        }}
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='previewImageId'}}
+          {{> afQuickField name='imageIds'}}
+
+          <button type='submit' class='btn'>
+            Save Changes
+          </button>
+          <button type='button' id='update-category-cancel' class='btn'>
+            Cancel
+          </button>
+        {{/autoForm}}
+      {{/if}}
+
+      {{#if creatingCategory}}
+        {{#autoForm
+          collection='CoverPhotoCategories'
+          id='new-category-form'
+          type='insert'
+        }}
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='previewImageId'}}
+          {{> afQuickField name='imageIds'}}
+
+          <button type='submit' class='btn'>
+            Save Changes
+          </button>
+          <button type='button' id='new-category-cancel' class='btn'>Cancel</button>
+        {{/autoForm}}
+      {{/if}}
+    </div>
+
+    <div id="cover-photos" class="col s12">
+      {{#autoForm id='add-cover-photos' schema='Schemas.Upload' type='insert'}}
+        {{> afFieldInput
+          name='file'
+          multiple=true
+          labelClass='h-btn-large'
+          labelTemplate='UploadCuratedCoverPhotos'
+          accept='image/*'
+        }}
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

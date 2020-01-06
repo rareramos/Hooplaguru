@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-cancel-x-black@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M11.0582465,9.61741263 C11.456775,10.0159411 11.456775,10.659718 11.0582465,11.0582465 C10.6586961,11.456775 10.0118537,11.456775 9.61332516,11.0582465 L6,7.44083384 L2.38667484,11.0582465 C1.98814633,11.456775 1.3413039,11.456775 0.941753525,11.0582465 C0.543225015,10.659718 0.543225015,10.0159411 0.941753525,9.61741263 L4.55507868,6 L0.941753525,2.38258737 C0.543225015,1.98405886 0.543225015,1.34028204 0.941753525,0.941753525 C1.3413039,0.543225015 1.98814633,0.543225015 2.38667484,0.941753525 L6,4.55916616 L9.61332516,0.941753525 C10.0118537,0.543225015 10.6586961,0.543225015 11.0582465,0.941753525 C11.456775,1.34028204 11.456775,1.98405886 11.0582465,2.38258737 L7.44492132,6 L11.0582465,9.61741263 L11.0582465,9.61741263 Z" id="icon-cancel-x-black" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

@@ -1,0 +1,126 @@
+<template name='EventDetails'>
+  
+  <div class='event-details'>
+    <ul class='event-details-collection'>
+        {{#if event.description}}
+          <li class='collection-item'>
+            <h4 class='event-description'>{{breakLines event.description}}</h4>
+          </li>
+        {{/if}}
+
+        {{> CategoryHeader heading=hostTitle}}
+
+        {{#each event.hosts}}
+          <div class='host-info-wrapper'>
+            <li class='collection-item collection-item-top'>
+              <h4>{{fullName}}</h4>
+
+              {{#if role}}
+                <h5>{{role}}</h5>
+              {{/if}}
+
+              <div class='host-icons-container'>
+                {{#if email}}
+                  <img class='host-email-icon' src='/icons/icon-host-email-black@2x.png'>
+                {{/if}}
+
+                {{#if phone}}
+                  {{#if isPhone}}
+                     <img class='host-sms-icon' src='/icons/icon-host-sms-black@2x.png'>
+                     <img class='host-phone-icon' src='/icons/host-phone-black@2x.png'>
+                   {{/if}}
+
+                   {{#if isTablet}}
+                     <img class='host-sms-icon' src='/icons/icon-host-sms-black@2x.png'>
+                   {{/if}}
+                {{/if}}
+              </div>
+            </li>
+          </div>
+        {{/each}}
+
+        {{> CategoryHeader heading=scheduleTitle}}
+
+        <div class='schedule-wrapper'>
+          {{#each event.schedule}}
+            <div class='activity-details-wrapper'>
+              {{> ActivityDetails}}
+            </div>
+          {{/each}}
+        </div>
+       
+      </ul>
+    <!--<div class='card collapsed-card activity-details-card'>
+      <div class='card-content'>
+        <h4 class='card-lower-heading'>
+          {{formatActivityDate event.eventStartTime event.eventEndTime}}
+          <span class='activity-details-timespan'>
+            {{formatActivityTime event.eventStartTime event.eventEndTime}}
+          </span>
+        </h4>
+        {{#with event.firstActivity}}
+          <h4 class='card-address-heading bold'>{{address.locationName}}</h4>
+          {{#if address.address1}}<p class='card-address-line light'>{{address.address1}}</p>{{/if}}
+          {{#if address.address2}}<p class='card-address-line light'>{{address.address2}}</p>{{/if}}
+          {{#if addressLine3}}<p class='card-address-line light'>{{addressLine3}}</p>{{/if}}
+        {{/with}}
+
+        {{#if event.description}}
+          <p class='card-address-line light description'>{{breakLines event.description}}</p>
+        {{/if}}
+      </div>
+    </div>-->
+
+    <ul class='collection with-header rsvp-event-header'>
+      {{> CategoryHeader heading=rsvpEventTitle classNames='centered-heading'}}
+    </ul>
+
+    {{#autoForm id='rsvp-form' schema='Schemas.Rsvp' type='insert'}}
+      {{> InputWrapper input='firstName' label=firstnameTitle value=autofillFirstName}}
+      {{#if formError1}}
+        <p class='login-form-error center-align' style='color: #F44336 !important;'><i class="mdi-alert-warning"></i>{{formError1}}</p>
+      {{/if}}
+      {{> InputWrapper input='lastName' label=lastnameTitle value=autofillLastName}}
+      {{#if formError2}}
+        <p class='login-form-error center-align' style='color: #F44336 !important;'><i class="mdi-alert-warning"></i>{{formError2}}</p>
+      {{/if}}
+      
+      <div class="row ">
+        <div class="ea-input input-field col s12">
+          <div class="col s2 countryCodeInput">
+            <input type="text" name="countryCode" id="countryCode" autocapitalize="true" autocorrect="on" class="standard-input" required="" value="{{getCountryCode}}" hidden='{{canNotEditPhone}}'>
+            <label for="countryCode" class="" hidden='{{canNotEditPhone}}'>{{_ "guests.phone_verification"}}</label>
+          </div>
+
+          <div class="col s10 phone-input">
+            <input type="text" name="phone" id="phone" autocapitalize="true" autocorrect="on" class="standard-input" value='{{autofillPhone}}' hidden='{{canNotEditPhone}}' data-schema-key="phone">
+          </div>
+        </div>
+      </div>
+
+      {{#if formError3}}
+        <p class='login-form-error center-align' style='color: #F44336 !important;'><i class="mdi-alert-warning"></i>{{formError3}}</p>
+      {{/if}}
+    {{/autoForm}}
+  
+  {{#if checkPastEvent}}
+    <ul class='collection with-header'>
+      <li class='guest-collection-header clearfix'>
+        <button id='rsvp-yes' class='h-btn-large btn-float-left' data-event="Invitation Accepted.">
+          {{_ "guests.iam_going"}}
+        </button>
+        <button id='rsvp-no' class='h-btn-large btn-float-right' data-event="Invitation Declained.">
+          {{_ "guests.cant_makeit"}}
+        </button>
+      </li>
+    </ul>
+
+    <button id='decide-later' data-event="Decide Later For Invitation.">{{_ "guests.decide_later"}}</button>
+
+  {{else}}
+    <h3 class='rsvp-heading'>Event is already completed.</h3>
+  {{/if}}
+  </div>
+
+   {{> Popup}}
+</template>

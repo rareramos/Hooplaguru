@@ -1,0 +1,11 @@
+<template name='ImagePreview'>
+  <div id='{{image.imageId}}' class='card small image-preview-card {{classNames}}'>
+    <div class='card-image'>
+      {{> Image image=image}}
+      {{#if gradient}}
+        <div class="background-opacity" style="background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));"></div>
+      {{/if}}
+      <h3 class='card-title'>{{title}}</h3>
+    </div>
+  </div>
+</template>

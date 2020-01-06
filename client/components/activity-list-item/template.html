@@ -1,0 +1,18 @@
+<template name='ActivityListItem'>
+  <li class='collection-item activity-collection-item'>
+    {{title}}
+
+    <span class='secondary-content'>
+      {{#if subtext}}
+        <span class='secondary-content-text'>{{subtext}}</span>
+      {{else}}
+        <i class='secondary-content-icon mdi-hardware-keyboard-arrow-right small'></i>
+      {{/if}}
+    </span><br>
+
+    {{formatActivityDate startTime endTime}}  {{formatActivityTime startTime endTime}}<br>
+
+    {{location}}
+  </li>
+</template>
+

@@ -1,0 +1,53 @@
+{
+  "public": {
+    "APP_NAME": "HooplaGuru",
+    "APPSEE_API_KEY": "3618f3103fea4d148d1fc3dcd7f1ba7b",
+    "SEGMENT_API_KEY": "VkrfT7WODUp04hBm0HeppRMA3g7RFTks",
+    "BRANCH_API_URL": "https://api.branch.io/v1/url/",
+    "BRANCH_API_KEY": "key_live_jjc5dUIJSxIbJHdn8BEPEdhfytclu4Oo",
+    "googleApiKey": "AIzaSyCJGhhflFiUprOAQq67j1WA9HLqjPmoJLE",
+    "googleApiUrl": "https://maps.googleapis.com/maps/api/staticmap",
+    "logoUrl": "https://s3.amazonaws.com/hooplabucket/hoopla-uploads/email-invite-footer-logo%402x.png",
+    "iconUrl": "https://s3.amazonaws.com/hooplabucket/hoopla-uploads/hooplaguru_icon.png",
+    "keyImageUrl": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/LH8ja7y4fkN5c3Pru-email-login-icon-key@2x.png",
+    "appStoreBadge": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/QirEhbZ88xPjBHw9e-app-store-badge.png",
+    "googlePlayBadge": "https://s3.amazonaws.com/app-hoopla-production/hoopla-uploads/cozDCGKoDBXwT2o9P-google-play-badge@2x.png",
+    "supportLink": "mailto:support@eventassist.zendesk.com?subject=Hoopla%20Feedback",
+    "CLOUDINARY_CLOUND_NAME":  "eventassist",
+    "ENABLE_ANALYTICS": true,
+    "TWITTER_CUSTOMER_KEY": "6t9vdauj3EpumjIg7t7p11TrS",
+    "TWITTER_CUSTOMER_SECRET": "wPshMrIkhgIjuU3AfXkkP9wDuolZSZw91CgjuJ2khFKkg9TzAS",
+    "TWITTER_ACCESS_TOKEN": "459039213-ff0i52Zafl4a9wlefjNB422y3QTciVS10QJezrnT",
+    "TWITTER_ACCESS_SECRET": "jZ1nd8XX4xnBvq9jlmThCMjK5yzzSw4fBLGChPyRj7aub",
+    "OUTLOOK_CLIENT_ID": "3793a08e-f680-4552-9ea6-0243023a4e23",
+    "OUTLOOK_SECRET" : "BtsSLt9niqqps4O7uborn3O",
+    "mixpanel": {
+      "token": "02c392d8311e56f4c8fc9eebce315a9c"
+    },
+    "FB_APP_ID": "247077189049693"
+  },
+  "private": {
+      "zendesk": {
+          "username": "cschwarz@revcord.com",
+          "token": "UlE0neOy5SXTE5g1yliK25ChvcqoBMpBZ7IzvjHu",
+          "remoteUri": "https://hooplaguru.zendesk.com/api/v2"
+      },
+      "AWS_S3_KEY": "AKIAJWLTPD27AG4KJQYQ",
+      "AWS_S3_SECRET": "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",
+      "AWS_S3_BUCKET": "hooplabucket",
+      "AWS_S3_REGION": "us-east-1"
+  },
+  "MANDRILL_API_USER": "cschwarz@revcord.com",
+  "MANDRILL_API_KEY": "mYzHY-i3VHjKEb2s0l0Tnw",
+  "TWILIO_ACCOUNT_SID": "AC2d1bc8ede3172fb482ee41157b9ae0d5",
+  "TWILIO_ACCOUNT_TOKEN": "b4df2a448211128812cefe9d6efbefae",
+  "TWILIO_PHONE_NUMBER": "7135885051",
+  "BITLY_API_KEY": "R_49bc14b0a5f54b8d9caeefd50fadeec5",
+  "BITLY_USERNAME": "poeticappteam",
+  "kadira": {
+    "appId": "i2rC7GYJoJ6MrA3vy", 
+    "appSecret": "0f586be9-1dab-4b09-bbb3-d9d011a47c50" 
+  },
+  "CLOUDINARY_API_KEY": "153524939269928",
+  "CLOUDINARY_API_SECRET": "y302VkihwEg1-tf6kSCzDNGBGTc"
+}

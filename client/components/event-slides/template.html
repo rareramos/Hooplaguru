@@ -1,0 +1,17 @@
+<template name='EventSlides'>
+  {{#swiperSlides
+    options=options
+    classNames='event-show-swiper swiper-container-short'
+  }}
+    {{> Details}}
+    {{> Wall}}
+    {{> EventsShowPhotos}}
+    <div class='swiper-slide short-slide'>
+      <div class='bounce-scroll-slide'>
+        {{> Template.dynamic template=eventSlideTemplate}}
+      </div>
+    </div>
+    {{> EventsMessages}}
+  {{/swiperSlides}}
+</template>
+

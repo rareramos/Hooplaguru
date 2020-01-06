@@ -1,0 +1,25 @@
+<template name='DateAndTime'>
+  {{#autoForm
+    id='date-and-time-form' schema=dateAndTimeSchema
+    type='update' doc=currentActivity collection='Activities'
+  }}
+    {{> InputWrapper input='startTime' label='Starts' datetime=true}}
+    {{> InputWrapper input='endTime' label='Ends (optional)' datetime=true}}
+    <!--{{#if showClear}}-->
+      <!--<img class='end-time-reset' src='/icons/icon-cancel-x-black@2x.png'>-->
+      <!--<div class='end-time-highlight-bg'></div>-->
+    <!--{{/if}}-->
+    {{> InputWrapper
+      input='timeZone' label='timezone' id='timezone-select'
+      nonstandard=true
+    }}
+
+    <ul class='collection'>
+      <li class='guest-collection-header'>
+        <button id='datetime-form-submit' type='submit' class='h-btn-large'>
+          use this date and time
+        </button>
+      </li>
+    </ul>
+  {{/autoForm}}
+</template>

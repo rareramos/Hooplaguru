@@ -1,0 +1,22 @@
+<template name='RsvpStepTwo'>
+  <h3 class='rsvp-heading'>{{text.heading1}}<br />{{text.heading2}}</h3>
+
+  <p class='rsvp-paragraph'>{{text.paragraph}}</p>
+
+  <div class='logo-row'>
+    <p class='logo-text-wrapper'>Get </p>
+    <div class='crop-img'>
+      <img class='logo-img-cropped' src='/images/email-invite-footer-logo@2x.png' />
+    </div>
+    <p class='logo-text-wrapper'> for FREE!</p>
+  </div>
+
+  <div class='app-store-badges'>
+    <a href='{{appStoreUrl}}'>
+      <img class='app-store-badge' src='/images/app-store-badge.png'>
+    </a>
+    <a href='{{googlePlayUrl}}'>
+      <img class='app-store-badge' src='/images/google-play-badge@2x.png'>
+    </a>
+  </div>
+</template>

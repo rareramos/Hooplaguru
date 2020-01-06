@@ -1,0 +1,33 @@
+.prompt-wrapper {
+  background-color: rgba(0,0,0,.87);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  p {
+    font-size: 16px;
+    font-family: 'Brandon_Light';
+    color: #fff;
+    margin: 20px;
+  }
+  h3 {
+    font-size: 25px;
+    font-family: 'Brandon_Reg';
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    line-height: 35px;
+  }
+  img {
+    margin-left: 10px;
+    height: 15px;
+  }
+}
+
+#close-different-email-overlay {
+  margin-top: 60px;
+  font-family: 'Brandon_Reg';
+}

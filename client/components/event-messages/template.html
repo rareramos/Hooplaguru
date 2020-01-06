@@ -1,0 +1,30 @@
+<template name='EventsMessages'>
+  <div class='swiper-slide short-slide'>
+    <div class='bounce-scroll-slide'>
+    <!--{{#if isHost}}-->
+      <div class="guest-collection-header guest-collection-header-border">
+        <a id='new-message-btn' class='btn h-btn-large'>
+          {{_ "message.new_message"}}
+        </a>
+      </div>
+    <!--{{/if}}-->
+      <div class="msg-listing">
+      {{#each msgList}}
+        <div class="msg {{readStatus}}">
+          <div class="msg-icon">
+            <img class='checkbox-icon' src='{{envelopeIcon}}'>
+          </div>
+          <div>
+            <div class="name">
+              {{userList}}
+            </div>
+            <div class="txt">
+              {{message}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

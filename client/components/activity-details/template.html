@@ -1,0 +1,52 @@
+<template name='ActivityDetails'>
+  <div class='card collapsed-card activity-details-card card-action-wrapper'>
+
+    <div class='card-content'>
+      <h3 class='card-upper-heading'>{{title}}</h3>
+      <h3 class='card-lower-heading'>
+        {{formatActivityDate startTime endTime}}
+        <span class='activity-details-timespan'>
+          {{formatActivityTime startTime endTime}}
+        </span>
+      </h3>
+
+      {{#if address}}
+        <h4 class='card-address-heading'>{{address.locationName}}</h4>
+        {{#if address.address1}}<p class='card-address-line'>{{address.address1}}</p>{{/if}}
+        {{#if address.address2}}<p class='card-address-line'>{{address.address2}}</p>{{/if}}
+        {{#if addressLine3}}<p class='card-address-line'>{{addressLine3}}</p>{{/if}}
+      {{/if}}
+
+    </div>
+  </div>
+
+  {{#if hasMapUrl}}
+
+    <a href="{{mapLink}}" target="_blank">
+      <div class='activity-map background-cover' style='background-image: url("{{staticMapUrl}}"); height: 100px;'></div>
+    </a>
+  {{/if}}
+
+  <div class='card-action-wrapper'>
+  {{#if hasTransitOrAttire}}
+    <div class='card-action activity-details-card'>
+      {{#if transit}}
+        <h6>{{_ "activity_add.parking"}}</h6>
+        <p class='card-action-text'>{{linkify transit}}</p>
+      {{/if}}
+
+      {{#if attire}}
+        <h6>{{_ "activity_add.dress_code"}}</h6>
+        <p class='card-action-text'>{{linkify attire}}</p>
+      {{/if}}
+    </div>
+  {{/if}}
+
+  {{#if notes}}
+    <div class='card-action'>
+      <h6>{{_ "activity_add.notes"}}</h6>
+      <p class='card-action-text'>{{linkify notes}}</p>
+    </div>
+  {{/if}}
+  </div>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-host-sms-black@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Event-Details" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M5.54125,15.9746527 C5.51375,16.0954694 6,16.1991906 6,16.3200073 L6,19.2000122 C6,20.1665458 6.20125,20.2300854 6.91625,19.5454574 L11,16.1088935 L13.5025,16.1088935 C18.19125,16.1088935 22,12.4575443 22,7.94705412 C22,3.43656395 18.19125,0 13.5025,0 L8.4975,0 C3.80875,7.63070484e-14 0,3.65134919 0,8.16183937 C0,11.8400367 2.04875,14.9678469 5.54125,15.9746527 Z M6,5.02722337 L17,5.02722337 L17,6.03402922 L6,6.03402922 L6,5.02722337 L6,5.02722337 Z M6,8.04083506 L17,8.04083506 L17,9.0476409 L6,9.0476409 L6,8.04083506 L6,8.04083506 Z M6,11.0544467 L14,11.0544467 L14,12.0612526 L6,12.0612526 L6,11.0544467 L6,11.0544467 Z" id="icon-host-sms-black" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

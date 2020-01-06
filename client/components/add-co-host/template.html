@@ -1,0 +1,45 @@
+<template name='addCoHost'>
+  <div id='add-co-host-popup' class='ea-modal'>
+    <div class='navbar-fixed'>
+      <nav class=ea-modal-nav>
+        <div class='nav-wrapper'>
+          {{> ModalHeader
+            leftIcon='/icons/icon-cancel-x-black@2x.png'
+            title=headerTitle leftIconClass='left-header-close left-header-icon'
+          }}
+        </div>
+      </nav>
+    </div>
+    
+    <ul class='add-guest-btn-wrapper collection with-header'>
+        <div id="add-photo-form-container">
+        {{existingCoHost}}
+
+          {{#each getYesGuest}}
+            {{#if checkHost}}
+              <li class="collection-item person-list-item">
+                <span>{{firstName}} {{lastName}}</span>
+                <span class="secondary-content checkbox-container guest-checkbox">
+                  <img class="checkbox-icon" src="{{getSrc}}">  
+                </span>
+              </li>
+            {{/if}}
+          {{/each}}
+
+          {{#if cheGuestLength}}
+          <li class="collection-item person-list-item">{{_ "add_cohost.no_guest"}}</li>
+          {{/if}}
+        </div>
+      
+    </ul>
+
+    <ul class='add-guest-btn-wrapper collection with-header'>
+      <li class='guest-collection-header guest-collection-header-border'>
+        <button id='add-media-btn' class='h-btn-large' data-event="Media Added.">
+          Done
+        </button>
+      </li>
+    </ul>
+
+  </div>
+</template>

@@ -1,0 +1,62 @@
+<template name='Loading'>
+  <div class='loading-wrapper-full {{classNames}}'>
+    <div class='valign-wrapper'>
+      <div class='valign center-align'>
+        
+          <div class="logo-img">
+            <img src="/images/logo-landing-screen@2x.png">
+          </div><br>
+       
+        <div id='{{wrapperId}}' class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+            <h3 class="event-logo-text">{{_ "events.event_loader"}}</h3>
+        </div><br>
+        
+      </div>
+    </div>
+  </div>
+  <div class="connection-loss-error">
+     {{> status}}  
+  </div>
+</template>

@@ -1,0 +1,116 @@
+html {
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h2 {
+  font-family: 'Brandon_Light';
+  line-height: 35px;
+  font-size: 29px;
+}
+
+h3 {
+  font-family: 'Brandon_Light';
+  line-height: 30px;
+  font-size: 22px;
+}
+
+h4 {
+  font-family: 'Brandon_Light';
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Lato_Bold';
+}
+
+h6 {
+  font-family: 'Lato_Reg';
+  text-transform: uppercase;
+}
+
+p {
+  font-family: 'Brandon_Reg';
+  font-size: 1.1rem;
+}
+
+a, input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input {
+  font-family: 'Lato_Light';
+}
+
+textarea {
+  font-family: 'Lato_Light';
+}
+
+label {
+  font-family: 'Brandon_Reg';
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.blur {
+  -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+::-webkit-input-placeholder {
+  color: $ea-placeholder-gray;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $ea-placeholder-gray;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $ea-placeholder-gray;
+}
+
+:-ms-input-placeholder {
+  color: $ea-placeholder-gray;
+}
+
+#us_report_button {
+  right: 0px;
+  bottom: 80px;
+}
+
+.full-white-bg {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+
+  .event-details {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .collection{
+      background: $primary-color-light;
+    }
+    #decide-later {
+      @extend .link-styles;
+
+      text-align: center;
+      display: block;
+      width: 100px;
+      padding: 10px;
+      margin: 0 auto 25px auto;
+      border: none;
+      background: $primary-color-light;
+    }
+  }
+}

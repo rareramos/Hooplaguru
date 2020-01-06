@@ -1,0 +1,30 @@
+.add-guest-file-container {
+  /*margin-top: 15px !important;
+  margin-bottom: 15px !important;*/
+}
+#upload-contact-file {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+.main-upload-div {
+  width: 100%;
+  float: left;
+}
+.input-file-span {
+  float: left;
+  width: 230px;
+}
+.sample-download-btn {
+	float: left;
+}
+
+.sample-download-btn img {
+	height: 25px;
+	width: 20px;
+}
+.upload-file-note {
+	float: left;
+	padding-top: 5px;
+	color: #2196F3;
+}

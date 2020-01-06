@@ -1,0 +1,101 @@
+<template name='Events'>
+  {{> FixedBottomButtons}}
+  <div class='ea_events-list'>
+
+    <div class='{{#if isCordova}}ea_bounce-scroll{{else}}ea_bounce-scroll-website{{/if}}'>
+      {{#if Template.subscriptionsReady}}
+        {{#if blankState}}
+          <div class='add-event-text'>
+            <div>
+              <img src='images/logo-landing-screen@2x.png' class='blank-events-logo'/>
+            </div>
+            <a class='first-event-btn font-uppercase' data-event="Adding First Event." href='#'>
+              {{_ "event_add.add_first_event"}}
+            </a>
+          </div>
+        {{else}}
+
+          {{> LargeCardList
+            listings=pendingRsvps
+            cardTemplate='RsvpCard'
+          }}
+
+          {{> LargeCardList
+            listings=usersEvents.upcoming
+            cardTemplate='EventCard'
+          }}
+
+          {{> LargeCardList
+            listings=usersEvents.past
+            cardTemplate='EventCard'
+          }}
+          
+        {{/if}}
+        
+        {{#unless isCordova}}
+          <div class='events-app-download-btn'>
+            <div class='app-store-badges-div'>
+              <div class="app-dowanload-url-btn">
+                <a href='{{hooplaAppStoreUrl}}' target="_blank">
+                  <img class='app-store-badge' src='/images/app-store-badge.png'>
+                </a>
+              </div>
+              <div class="app-dowanload-url-btn">
+                <a href='{{hooplaGooglePlayUrl}}' target="_blank">
+                  <img class='app-store-badge' src='/images/google-play-badge@2x.png'>
+                </a>
+              </div>
+            </div>
+          </div>
+          {{/unless}}
+      {{else}}
+        {{>Loading}}
+      {{/if}}
+    </div>
+
+  </div>
+  
+  
+  <div class='events-logo'>
+    <img src='images/logo-landing-screen@2x.png' style='{{#if blankState}}visibility: hidden{{/if}}'/>
+  </div>
+  
+  <div class='ea_event-listing'>
+    {{> EventsShow}}
+  </div>
+
+  
+
+  {{> UserForm}}
+
+  {{> ContactSupportForm}}
+  {{> EventForm options=swiper.eventForm}}
+  {{> SharePrompt}}
+  {{> DeletePrompt}}
+  {{> AddGuestsMain}}
+  {{> AddGuestsEvents}}
+  {{> AddGuestsOutlook}} 
+  {{> AddGuestsTwitter}}
+  {{> AddGuests}}
+  {{> Group}}
+  {{> EventNavMain}}
+  {{> EventsMessagesDetails}}
+  {{> EventsMessagesAdd}}
+
+  {{> PhotoSwipe}}
+
+  {{> eventAddMedia}}
+  {{> addCoHost}}
+
+  {{#unless isCordova}}
+    {{> AddGuestsFile}}
+  {{/unless}}
+
+  {{#if overlayTemplate}}
+    {{> Template.dynamic template=overlayTemplate}}
+  {{/if}}
+
+  <div class="connection-loss-error">
+     {{> status}}  
+  </div>
+</template>

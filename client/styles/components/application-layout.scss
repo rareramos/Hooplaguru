@@ -1,0 +1,21 @@
+html {
+   background-color: black;
+  body > div {
+    max-width: 1026px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    .loading-wrapper-full {
+      max-width: initial;
+    }
+  }
+}
+
+.update-toast {
+  line-height: 24px;
+}
+
+.update-ready {
+  color: #fff;
+}

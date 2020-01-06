@@ -1,0 +1,77 @@
+<template name='AddGuestsEvents'>
+  <div id="add-guests-events-modal" class='loading-wrapper-full'>
+    <div class='navbar-fixed' id='add-guest-fixed-header'>
+      <div id='add-guest-header' class='event-form-nav'>
+        <div class='nav-wrapper'>
+          <div class='header-stacked main visible'>
+            {{> ModalHeader title=headerTitle leftIcon='/icons/icon-cancel-x-black@2x.png' leftIconClass='close-add-guests-events left-header-icon'}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='add-guests-events-wrapper'>
+      <div class='guests-events-row' id="guests-events-row-custom">
+        <select tabindex="-1" id='eventlist-select' class='eventList minimal'>
+          <option value="">{{_ "guests.select_event"}}</option>
+          {{#each event in eventlist}}
+            <option value="{{event._id}}">{{event.title}}</option>
+          {{/each}}        
+        </select>
+      </div>
+      <div>
+        {{#each invite in contacts}}
+          {{invite.phone}}
+        {{/each}}
+
+        <ul class='collection with-header contacts-collection contacts-collection-events'>
+          {{#if visibleContacts}}
+            {{#if visibleContactsCount}}
+              <div class='checkbox-container select-all-event'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{allSelectedIcon}}'>
+                  <span class='checkbox-text'>{{selectAllText}}</span>
+                </p>
+              </div>
+            {{/if}}
+          {{/if}}
+          
+          {{#if visibleContactsCount}}
+            {{#each visibleContacts}}
+              <div class='checkbox-container personal-contact' data-contact-id='{{_id}}'>
+                <p class='checkbox-label'>
+                  <img class='checkbox-icon' src='{{checkboxIcon}}'>
+                  <span class='checkbox-text'>
+                    {{firstName}} {{lastName}}
+                    <span style='float:right'>
+                    {{#if phone}}
+                      {{_ "guests.phone"}}
+                    {{else}}  
+                      {{_ "guests.email"}}
+                    {{/if}}
+                    </span>
+                  </span>
+                  <span class='checkbox-subtext'>
+                    {{#if phone}}
+                      {{phone}}
+                    {{else}}  
+                      {{email}}
+                    {{/if}}
+                  </span>
+                </p>
+              </div>
+            {{/each}}
+          {{else}}
+            <!--<div class='no-guests'> {{_ "guests.no_guest"}}</div>-->
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    <ul class='add-guest-btn-wrapper-collection collection'>
+      <li class='collection-item guest-collection-header'>
+        <button id='add-personal-contacts-btn' class='h-btn-large' data-event="Guest Added From Past Event.">
+          {{addContactsButtonText}}
+        </button>
+      </li>
+    </ul>
+  </div>
+</template>

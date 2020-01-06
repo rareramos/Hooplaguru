@@ -1,0 +1,13 @@
+.blank-state-container {
+  text-align: center;
+  color: $blank-state-color;
+  padding: 70px 20px 0 20px;
+
+  .blank-state-heading {
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    line-height: 30px;
+  }
+}

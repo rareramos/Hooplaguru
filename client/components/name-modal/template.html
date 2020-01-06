@@ -1,0 +1,35 @@
+<template name='GetUsersName'>
+  <div class='valign-wrapper'>
+    <div class='valign center-align'>
+      <p class='onboard-details'>{{_ "code_from.account_name"}}</p>
+
+      <form id='name-form'>
+        {{#if formError}}
+          <p class='login-form-error center-align' style='color: red;'>{{formError}}</p>
+        {{/if}}
+
+        <input type='text'
+          id='first-name'
+          placeholder='{{_ "code_from.firstname"}}'
+          autocapitalize='true'
+          autocorrect="off"
+          autocomplete='off'>
+
+        <input type='text'
+          id='last-name'
+          placeholder='{{_ "code_from.lastname"}}'
+          autocorrect="off"
+          autocapitalize='true'
+          autocomplete='off'>
+
+        <button
+          id='name-submit'
+          class='btn btn-full'
+          disabled=true
+          type='submit'>
+          {{_ "code_from.continue"}}
+        </button>
+      </form>
+    </div>
+  </div>
+</template>

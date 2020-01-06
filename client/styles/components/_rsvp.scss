@@ -1,0 +1,56 @@
+.rsvp-heading {
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rsvp-paragraph {
+  text-align: center;
+  font-family: 'Lato_Light';
+  margin: 15px 30px 35px 30px;
+}
+
+.logo-row {
+  text-align: center;
+}
+
+.logo-text-wrapper {
+  font-weight: bold;
+  display: inline;
+}
+
+.crop-img {
+  position: relative;
+  top: 7px;
+  display: inline-block;
+  height: 30px;
+  overflow: hidden;
+  margin-left: 5px;
+  margin-right: 2px;
+
+  .logo-img-cropped {
+    height: 40px;
+  }
+}
+
+#rsvp-code-form {
+  border-top: $ea-form-border;
+
+  .rsvp-code-submit {
+    .guest-collection-header {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.app-store-badges {
+  text-align: center;
+  margin-top: 25px;
+
+  .app-store-badge {
+    width: 150px;
+    padding: 0 4px 0 4px;
+  }
+}

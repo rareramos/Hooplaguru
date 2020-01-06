@@ -1,0 +1,23 @@
+<template name='RsvpCard'>
+  <div class='card event-card rsvp-card'>
+    <div class='card-image card-image-large'>
+      {{> Image imageId=event.coverPhotoId className="card-image-bg"}}
+      <div class="background-opacity" style="background: -webkit-linear-gradient({{themeCss.gradient}});"></div>
+
+      <div class='btn-container light-theme'>
+        <a class='btn rsvp-yes'>I'm going</a>
+        <a class='btn rsvp-no'>Can't make it</a>
+      </div>
+
+      <span class='card-title event-card-title' style='color: {{themeCss.color}};'>
+        <h3>{{title}}</h3>
+        <p>
+          {{formatDateInUTCWithToken eventStartTime 'dddd MMMM D'}}
+          <span class='event-card-time'>
+            {{formatDateInUTCWithToken eventStartTime 'h:mm a'}}
+          </span>
+        </p>
+      </span>
+    </div>
+  </div>
+</template>

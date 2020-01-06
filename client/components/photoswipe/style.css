@@ -1,0 +1,12 @@
+.pswp {
+  height: 100vh;
+}
+
+.pswp__bg {
+  position: fixed;
+  height: 100vh;
+}
+
+.pswp__img--placeholder--blank {
+  background: none;
+}

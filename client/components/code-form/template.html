@@ -1,0 +1,42 @@
+<template name='CodeForm'>
+  <div class='valign-wrapper'>
+    <div class='valign center-align'>
+    <div class="login-logo">
+        <img src="images/logo-landing-screen@2x.png">
+      </div>
+      <p class='onboard-details'>{{_ "code_from.header"}} <br />
+        {{formatPhone phoneNumber}}
+      </p>
+
+      <form id='code-form'>
+        <input type='tel'
+          id='code-input'
+          placeholder='{{_ "code_from.placeholder"}}' >
+        <button id='code-submit' class='btn' disabled=true type='submit' data-event="User Logged In.">{{_ "code_from.sign_in"}}</button>
+      </form>
+
+      <p class='onboard-details'>
+        {{_ "code_from.didnt_get"}} <a class='onboard-link' href='#'>{{_ "general.try_again"}}</a>
+      </p>
+    </div>
+  </div>
+  {{#unless isCordova}}
+  <div class="events-app-download-btn">
+    <div class="app-store-badges-div">
+      <div class="app-dowanload-url-btn">
+        <a href="{{hooplaAppStoreUrl}}" target="_blank">
+          <img class="app-store-badge" src="/images/app-store-badge.png">
+        </a>
+      </div>
+      <div class="app-dowanload-url-btn">
+        <a href="{{hooplaGooglePlayUrl}}" target="_blank">
+          <img class="app-store-badge" src="/images/google-play-badge@2x.png">
+        </a>
+      </div>
+    </div>
+  </div>
+  {{/unless}}
+  <div class="connection-loss-error">
+     {{> status}}  
+  </div>
+</template>

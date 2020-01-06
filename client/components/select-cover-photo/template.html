@@ -1,0 +1,31 @@
+<template name='SelectCoverPhoto'>
+  <ul class='collection with-header'>
+    <li class='guest-collection-header collection-header-btn-wrapper'>
+      {{#autoForm id='select-cover-photo-form' schema='Schemas.Upload' type='insert' }}
+        <!--{{> afFieldInput
+          name='file'
+          labelClass='h-btn-large'
+          labelTemplate='UploadCoverPhoto'
+          accept='image/*'
+        }}-->
+        <button type="button" class="upload-input-btn h-btn-large">
+          {{_ "event_add.own_photo"}}
+        </button>
+
+        <input type="file" class="js-file cover-photos-file" accept="image/*" >
+
+      {{/autoForm}}
+    </li>
+  </ul>
+
+  {{#each categories}}
+    {{> ImagePreview
+      title=name
+      image=image
+      classNames='category-preview'
+      context=this
+      gradient=true}}
+  {{/each}}
+</template>
+
+  

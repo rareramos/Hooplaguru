@@ -1,0 +1,4 @@
+{
+    "supported_languages": ["en","es","hi","ar","fr","zh"],
+    "cdn_path": "i18n"
+}

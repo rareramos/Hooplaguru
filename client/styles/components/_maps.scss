@@ -1,0 +1,38 @@
+.location-map-container {
+  height: 200px;
+  border-bottom: 1px solid $ea-primary-color-tinted;
+}
+
+.location-results-collection {
+  .collection-item.location-item {
+    padding-left: 48px;
+    position: relative;
+    border-bottom: 1px solid $ea-primary-color-tinted;
+    font-family: 'Lato_Reg';
+    cursor: pointer;
+    .add-location-prompt-heading, .nearby-result-heading {
+      font-family: 'Lato_Bold';
+    }
+  }
+
+  .custom-location-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 15px;
+    left: 0;
+    top: 5px;
+  }
+
+  .location-result-icon {
+    position: absolute;
+    width: 15px;
+    margin: 15px;
+    left: 0;
+    top: 5px;
+  }
+
+  .choose-location-wrapper {
+    padding: 5px 0 5px 0;
+  }
+}

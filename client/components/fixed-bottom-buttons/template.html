@@ -1,0 +1,20 @@
+<template name='FixedBottomButtons'>
+  {{#unless hideButtons}}
+  <div class="fixed-btn-wrapper">
+    <div class='hamburger-menu-btn fixed-action-btn'>
+      <!--<a class='h-button user-form-btn-inner h-btn-floating h-btn-large white'>
+        <img id='person-icon' src='/images/hamburger-icon.png'>
+      </a>-->
+      <div class="user-form-btn-inner">
+        <img id='person-icon' src='/images/hamburger-icon.png' height="34" width="34">
+      </div>
+    </div>
+
+    <div class='event-form-btn fixed-action-btn'>
+      <a class="h-button-add-event event-form-btn-inner create-event-form-btn h-btn-floating h-btn-large white" data-event="Adding Event.">
+        <img src='/icons/icon-plus-add-event-black@2x.png'>
+      </a>
+    </div>
+  </div>
+  {{/unless}}
+</template>

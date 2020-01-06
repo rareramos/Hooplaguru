@@ -1,0 +1,53 @@
+.loading-wrapper-full {
+  @extend .absolute-cover;
+  top: 0;
+  background-color: $ea-primary-color-tinted;
+  z-index: 9999;
+
+  .valign-wrapper {
+    height: 100%;
+
+    .center-align {
+      width: 100%;
+    }
+  }
+
+  &.loading-btn {
+    left: 0;
+    right: 0;
+    background-color: $ea-transparent;
+
+    #loading-btn-wrapper {
+      height: 25px;
+      width: 25px;
+      top: 6px;
+    }
+  }
+}
+
+.logo-img img {
+  width: 180px;
+}
+
+.spinner-blue,
+.spinner-blue-only {
+  /*border-color: #4285f4;*/
+  border-color: #78CEDE !important; /*HG Blue Ocean Water*/
+}
+
+.spinner-red,
+.spinner-red-only {
+  border-color: #FFF !important;
+}
+
+.spinner-yellow,
+.spinner-yellow-only {
+  /*border-color: #f4b400;*/
+  border-color: #F5E163 !important; /*HG Yellow Soft Yellow*/
+}
+
+.spinner-green,
+.spinner-green-only {
+  /*border-color: #0f9d58;*/
+  border-color: #B4D7A3 !important; /*HG Green Spring Green*/
+}

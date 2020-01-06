@@ -1,0 +1,17 @@
+<template name='PreviewWallUpload'>
+  <form id='media-post-form'>
+    <textarea id='media-post-field' placeholder='{{_ "wall.message"}}' class="post-message-preview-wall">{{postWallUploadPreDifine}}</textarea>
+  </form>
+
+  <div class='post-form-icons media-post-icons'>
+    <!--{{#if canMarkImportant}}
+      {{#if markedImportant}}
+        <img class='toggle-importance' src='/icons/icon-announce-active@2x.png'>
+      {{else}}
+        <img class='toggle-importance' src='/icons/icon-announce-inactive@2x.png'>
+      {{/if}}
+    {{/if}}-->
+    <p class='post-form-submit'>{{_ "wall.send"}}</p>
+  </div>
+  
+</template>

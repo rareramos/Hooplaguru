@@ -1,0 +1,141 @@
+.row {
+  .media-tile-wrapper {
+    padding: 0 1px 0 1px;
+    .card {
+      box-shadow: none;
+      background-color: #F2F2F2;
+      cursor: pointer;
+    }
+  }
+
+  &.media-tiles-row {
+    margin: 2px 0 0 0;
+  }
+}
+
+.media-tile {
+  position: relative;
+  padding-bottom: 100%;
+  .media-tile-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+}
+
+.media-edit-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+
+  .media-edit-btn {
+    margin: 0;
+    width: 26px;
+    height: 26px;
+    background-color: $ea-primary-color-tinted;
+    border: 2px solid $primary-color-light;
+    border-radius: 13px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    .media-edit-check {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height: 12px;
+      width: 12px;
+    }
+  }
+}
+
+.media-preview-img {
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 13px;
+}
+
+.media-swiper {
+  height: 100%;
+
+  .full-photo-wrapper {
+    .inner-media-slide-wrapper {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.media-swiper-drawer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: $ea-primary-color-tinted;
+  color: $primary-color-light;
+  z-index: 1000;
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  .drawer-wrapper {
+    p, h5 {
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+      padding-top: 10px;
+    }
+  }
+
+  h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  &.comments-drawer {
+    height: 47px;
+    padding-right: 10px;
+
+    .comment-form {
+      color: $primary-color;
+    }
+  }
+}
+
+.media-swiper-bg {
+  @extend .background-cover;
+  background-size: 100% auto;
+  height: 100%;
+}
+
+.like-pic {
+  background: #fff;
+  float: left;
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
+  border-right: 2px solid #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cmnt-pic {
+  float: left;
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
+  background: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}

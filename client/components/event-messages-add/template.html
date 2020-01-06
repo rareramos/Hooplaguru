@@ -1,0 +1,37 @@
+<template name='EventsMessagesAdd'>
+  <div id='msg-add-modal' class='ea-modal'>
+    <div class='navbar-fixed'>
+      <nav class=ea-modal-nav>
+        <div class='nav-wrapper'>
+          {{> ModalHeader
+            leftIcon='/icons/icon-cancel-x-black@2x.png'
+            title=messageTitle leftIconClass='left-header left-header-icon'
+          }}
+        </div>
+      </nav>
+    </div>
+    <div class="addUserList">
+      <ul class='collection with-header contacts-collection contacts-collection-messages'>
+        {{#each adduserLists}}
+          <div class='checkbox-container personal-contact' data-contact-id='{{_id}}'>
+            <p class='checkbox-label'>
+              <img class='checkbox-icon' src='{{checkboxIcon}}'>
+              <span class='checkbox-text'>
+               {{#if isHost}} <b>Host:</b>{{/if}} {{firstName}} {{lastName}}
+              </span>
+              <span class='checkbox-subtext'>{{value}}</span>
+            </p>
+          </div>
+        {{/each}}
+      </ul>
+    </div>
+    <ul class='add-guest-btn-wrapper collection with-header'>
+      <li class='guest-collection-header guest-collection-header-border'>
+        <button id='add-msg-to-btn' class='h-btn-large' data-event="Receipint Added For Message">
+          {{_ "message.add_receipint"}}
+        </button>
+      </li>
+    </ul>
+
+  </div>
+</template>

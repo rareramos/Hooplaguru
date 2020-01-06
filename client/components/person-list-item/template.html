@@ -1,0 +1,18 @@
+<template name='PersonListItem'>
+  <li class='collection-item person-list-item'>
+    <span class='{{inactiveStatus.className}}'>
+      {{displayedName}} {{#if role}} ({{role}}) {{/if}} {{#if plusOneGuest}}+1{{/if}}
+      {{inactiveStatus.text}}
+    </span>
+
+    <span class='secondary-content'>
+      {{#if subtext}}
+        <span class='secondary-content-text'>{{subtext}}</span>
+      {{/if}}
+
+      {{#if leftArrow}}
+        <i class='secondary-content-icon mdi-hardware-keyboard-arrow-right small'></i>
+      {{/if}}
+    </span>
+  </li>
+</template>

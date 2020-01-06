@@ -1,0 +1,250 @@
+.btn {
+  @extend .bold-btn-txt;
+
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.h-btn-large {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: inline-block;
+  height: 54px;
+  line-height: 56px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  &#choose-cover-photo-btn {
+    i {
+      margin-top: -2px;
+    }
+  }
+
+  i {
+    font-weight: bold;
+  }
+
+  &.btn-faded {
+    border: 1px solid $ea-lightgray;
+    color: $ea-lightgray;
+    box-shadow: none;
+  }
+
+  &.transparent-login-btn {
+    font-family: 'Lato_Bold';
+    margin-top: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+  }
+}
+
+.rsvp-card {
+  .btn-container {
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    right: 17px;
+
+    .btn {
+      width: 48%;
+      height: 30px;
+      padding: 0;
+      font-family: 'Lato_Reg';
+      line-height: 28px;
+      background-color: $ea-primary-color-tinted;
+      color: $primary-color-light;
+      font-family: 'Lato_Light';
+      border: 1px solid $primary-color-light;
+      border-radius: 20px;
+
+      &.rsvp-no {
+        float: right;
+      }
+    }
+
+    &.light-theme {
+      .btn {
+        border: 1px solid $primary-color;
+        background: $primary-color-light;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.transparent-btn {
+  @extend .transparent-btn-bg;
+  padding: 1px 10px 1px 10px;
+}
+
+.offset-top-margin {
+  margin-top: -8px;
+  margin-left: 20px;
+}
+
+.clean-btn {
+  border: none;
+  box-shadow: none;
+}
+
+.fixed-btn-wrapper {
+  position: relative;
+  margin-top: 78px;
+  z-index: 1;
+}
+
+.user-form-btn, .event-form-btn {
+  position: absolute;
+  z-index: 0;
+  bottom: 20px;
+  width: 40px;
+  margin-left: 0px;
+  margin-right: 0px;
+  .h-btn-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.hamburger-menu-btn{
+  position: absolute;
+  z-index: 0;
+  bottom: 10px;
+  width: 40px;
+  margin-left: 0px;
+  margin-right: 0px;
+  left: 20px;
+  .h-btn-large {
+    padding-left: 0;
+    padding-right: 0;
+  } 
+}
+
+.user-form-btn {
+  left: 20px;
+}
+
+.event-form-btn {
+  right: 20px;
+  left:  initial;
+}
+
+#event-form-btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#outstanding-invites-btn {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 1rem;
+}
+
+.h-button {
+  &.h-btn-large.h-btn-floating {
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    img {
+      height: 17px;
+      width: 17px;
+      margin-bottom: 5px;
+    }
+
+    #person-icon {
+      margin-left: -0.5px;
+    }
+  }
+}
+
+.h-button-add-event {
+
+    border: none;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+
+    img {
+      height: 17px;
+      width: 17px;
+      margin-bottom: 8px;
+    }
+
+    #person-icon {
+      margin-left: -0.5px;
+    }
+}
+
+.name-form-btn {
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+}
+
+#grey-save-event-btn {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: rgba(0,0,0,.25);
+  box-shadow: none;
+  cursor: default;
+}
+
+.first-event-btn {
+  border-radius: 30px;
+  background: #fff;
+  font-size: 15px;
+  font-family: 'Brandon_Reg';
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 35px;
+  padding-left: 35px;
+}
+
+.upload-input-btn #upload-field {
+  cursor: pointer;
+}
+
+#close-pswp, #share-pswp {
+  background: url(packages/spectrum_photoswipe/lib/dist/default-skin/default-skin.png) 0 0 no-repeat;
+}
+
+#close-pswp {
+  background-position: 0 -44px;
+}
+
+#share-pswp {
+  background-position: -44px -44px;
+}
+
+.load-more-btn-container {
+  text-align: center;
+  height: 50px;
+
+  a {
+    text-decoration: underline;
+
+    p {
+      margin: 0;
+      line-height: 50px;
+    }
+  }
+}

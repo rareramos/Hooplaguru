@@ -1,0 +1,52 @@
+<template name='EventsShowPhotos'>
+  <div class='swiper-slide short-slide'>
+    <div class='bounce-scroll-slide show-photos-slide'>
+      <div id="event-photos-buttons" class='inline-buttons'>
+        {{#if checkphone}}
+          {{#if shouldShowShare}}
+            <button id='share-photos' class='h-btn-large inline-button btn-photo-inline'  data-event="Photo Shared.">
+              {{_ "photos.share"}}
+            </button>
+          {{/if}}
+        {{/if}}
+          {{#if shouldShowDelete}}
+            <button id='delete-photos' class='h-btn-large inline-button btn-photo-inline' data-event="Delete Photo">
+              {{_ "photos.delete"}}
+            </button>
+          {{/if}}
+
+
+          <button id='add-media' class='h-btn-large inline-button btn-photo-inline'>
+            {{_ "photos.add"}}  
+          </button>
+        
+      </div>
+
+      <div id="event-photos-activity" class='inline-selecbox'>
+            <select tabindex="-1" id='activity-select' class='eventList minimal'>
+              <option value="All" selected="selected">{{_ "photos.select_title"}}</option>
+              <option value="">General</option>
+              {{#each activity in eventActivities}}
+                <option value="{{activity._id}}">{{activity.title}}</option>
+              {{/each}}
+            </select>
+      </div>
+
+      <div class='event-media-wrapper event-photos-list'>
+
+        <div class='row media-tiles-row'>
+           {{#each imagesByRows}}
+             <div class='row media-tiles-row'>
+             
+              {{#each this}}
+                {{> MediaTile image=this commentscount=commentsCount likescount=likesCount likedImg=likedImg}}
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</template>

@@ -1,0 +1,139 @@
+<template name='EventFormMain'>
+    <div id='select-cover-photo' class='img-preview-wrapper'>
+      {{#if currentEvent}}
+        {{> ImagePreview image=currentEvent}}
+      {{else}}
+        <div class='card small image-preview-card'>
+          <div class='card-image'>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class='img-preview-ctr-bg'>
+        <span class='img-preview-ctr-text'>
+          {{coverPhotoLabel}}
+          <img src='/icons/icon-chevron-right-white@2x.png' class='img-preview-ctr-icon'>
+        </span>
+      </div>
+    </div>
+
+    {{#if noCoverPhoto}}
+      <div class='red-text no-cover-photo-warning'>
+        <i class='mdi-alert-warning'></i>
+        {{_ "event_add.cover_cover"}}
+      </div>
+    {{/if}}
+
+    {{> EventBaseForm}}
+
+    <ul class='collection with-header'>
+      {{> CategoryHeader heading=scheduleTitle}}
+
+      {{#each currentEvent.schedule}}
+        {{> ActivityListItem}}
+      {{/each}}
+      
+      
+      <li class='guest-collection-header'>
+        {{#if isActivityEnable}}
+          <a id='add-activity-btn' tabindex='7' class='h-btn-large'>
+            {{#if currentEvent.hasActivities}}
+              {{_ "event_add.add_another_activity"}}
+            {{else}}
+              {{_ "event_add.add_activity"}}
+            {{/if}}
+          </a>
+        {{else}}
+          <button id='grey-save-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+            {{_ "event_add.add_activity"}}
+          </button>
+        {{/if}}
+      </li>
+
+      {{#if editMode}}
+        {{#if currentEvent.hasActivities}}
+          <li class='guest-collection-header no-top'>
+            <button id='invite-more-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+              {{inviteMoreGuestTitle}}
+            </button>
+          </li>
+        {{else}}
+          <li class='guest-collection-header no-top'>
+              <button id='grey-save-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+                {{inviteMoreGuestTitle}}
+              </button>
+            </li>
+        {{/if}}
+        <li class='guest-collection-header no-top'>
+          <button id='add-cohost-btn' tabindex='8' type='submit' class='h-btn-large' data-event="Co-Host Added.">
+            {{_ "event_add.add_cohost"}}
+          </button>
+        </li>
+      {{/if}}
+        
+      
+      {{#if editMode}}
+        {{#if currentEvent.hasActivities}}
+          <li class='guest-collection-header no-top'>
+            <button id='save-event-btn' tabindex='8' type='submit' class='h-btn-large' data-event="Event Created.">
+              {{eventButtonText}}
+            </button>
+          </li>
+        {{else}}
+          <li class='guest-collection-header no-top'>
+            <button id='grey-save-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+              {{eventButtonText}}
+            </button>
+          </li>
+        {{/if}}
+      {{/if}}
+        
+      {{#unless editMode}}
+        
+
+        {{#if currentEvent.hasActivities}}
+            <li class='guest-collection-header no-top'>
+              <button id='save-event-guest-btn' tabindex='8' type='submit' class='h-btn-large' data-event="Event Created.">
+                {{_ "event_add.add_guests_my_event"}}
+              </button>
+            </li>
+        {{else}}
+            <li class='guest-collection-header no-top'>
+              <button id='grey-save-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+                {{_ "event_add.add_guests_my_event"}}
+              </button>
+            </li>
+        {{/if}}
+
+        {{#if currentEvent.hasDraftEvent}}
+          <li class='guest-collection-header no-top'>
+            <button id='save-event-as-draft-btn' tabindex='8' type='submit' class='h-btn-large' data-event="Event Created.">
+              {{_ "event_add.save_event_as_draft"}}
+            </button>
+          </li>
+        {{else}}
+          <li class='guest-collection-header no-top'>
+            <button id='grey-save-event-btn' tabindex='8' type='submit' class='h-btn-large'>
+              {{_ "event_add.save_event_as_draft"}}
+            </button>
+          </li>
+        {{/if}}
+      {{/unless}}
+
+
+      {{#if editMode}}
+        
+        <li id='duplicate-event-btn' tabindex='10' class='guest-collection-header delete-event-wrapper' data-event="Event Duplicated.">
+          <span class='transparent-btn'>
+            {{_ "event_add.event_duplicate"}}
+          </span>
+        </li>
+
+        <li id='delete-event-btn' tabindex='11' class='guest-collection-header delete-event-wrapper' data-event="Event Deleted.">
+          <span class='transparent-btn'>
+            {{_ "event_add.event_delete"}}
+          </span>
+        </li>
+      {{/if}}
+    </ul>
+</template>

@@ -1,0 +1,50 @@
+{
+  "platforms": [
+    {
+      "platformName":     "modulus",
+      "projectName":      "hoopla-production",
+      "settingsFilePath": "settings-production.json",
+      "environment":      "production"
+    },
+    {
+      "platformName":     "modulus",
+      "projectName":      "hoopla-staging",
+      "settingsFilePath": "settings-staging.json",
+      "environment":      "staging"
+    },
+    {
+      "platformName":           "android",
+      "projectName":            "hoopla.keystore",
+      "server":                 "app.hoopla.social",
+      "storepass":              "hoopla",
+      "keystoreFilePath":       ".keystore",
+      "mobileSettingsFilePath": "settings-production.json",
+      "apkOutputPath":          "~/Downloads/hoopla.apk",
+      "environment":            "production"
+    },
+    {
+      "platformName":           "android",
+      "projectName":            "hoopla.keystore",
+      "server":                 "hooplastaging-51459.onmodulus.net",
+      "storepass":              "hoopla",
+      "keystoreFilePath":       ".keystore",
+      "mobileSettingsFilePath": "settings-staging.json",
+      "apkOutputPath":          "~/Downloads/hoopla.apk",
+      "environment":            "staging"
+    },
+    {
+      "platformName":           "ios",
+      "projectName":            "hoopla",
+      "server":                 "app.hoopla.social",
+      "mobileSettingsFilePath": "settings-production.json",
+      "environment":            "production"
+    },
+    {
+      "platformName":           "ios",
+      "projectName":            "hoopla",
+      "server":                 "hooplastaging-51459.onmodulus.net",
+      "mobileSettingsFilePath": "settings-staging.json",
+      "environment":            "staging"
+    }
+  ]
+}

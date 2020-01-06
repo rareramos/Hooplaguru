@@ -1,0 +1,16 @@
+<template name='SubmitWrapper'>
+  <ul class='collection {{classNames}}'>
+    <li class='guest-collection-header'>
+      <button
+        type='submit'
+        class='submit-wrapper-btn h-btn-large {{disabledClass}}'
+        disabled='{{disabledStatus}}' tabindex='{{tabindex}}'  data-event='{{dataEvents dataEvent}}'
+        >
+        {{text}}
+        {{#if iconSrc}}
+          <img src='{{iconSrc}}'>
+        {{/if}}
+      </button>
+    </li>
+  </ul>
+</template>

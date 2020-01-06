@@ -1,0 +1,301 @@
+.card {
+  margin: 0;
+  border-radius: 0;
+
+  .card-title.card-title-boxed {
+    @include border-box();
+    padding: 0 16px 18px 16px;
+    width: 100%;
+
+    .card-subtitle {
+      margin: 0 0 10px 0;
+      line-height: 30px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 30px;
+      font-size: 20px;
+      margin: 10px 0 0 0;
+    }
+
+    .event-card-time {
+      margin-left: 17px;
+      font-size: 18px;
+      opacity: .75;
+    }
+  }
+
+  &.small {
+    height: $ea-small-card-height;
+    box-shadow: none;
+    border-bottom: $ea-form-border;
+
+    .card-image {
+      height: $ea-small-card-height;
+
+      .card-image-bg {
+        @extend .background-cover;
+        height: 100%;
+      }
+
+      .card-title {
+        margin: 0;
+        padding: 0 14px 8px 14px;
+        font-weight: bold;
+      }
+    }
+
+    &.category-preview {
+      height: $ea-smaller-card-height;
+
+      .card-image {
+        height: 100%;
+      }
+    }
+
+    &.image-preview-card-smaller {
+      height: $ea-smaller-card-height;
+
+      .card-image {
+        height: 100%;
+      }
+      h3{
+        font-size: 30px;
+      }
+    }
+  }
+
+  &.event-card {
+    height: $ea-large-card-height;
+    cursor: pointer;
+  }
+
+  &.rsvp-card {
+    height: $ea-large-rsvp-card-height;
+
+    .card-image-large {
+      height: $ea-large-rsvp-card-height;
+    }
+  }
+
+  .card-title.event-card-title {
+    padding: 0 15px 20px 15px;
+
+    h3 {
+      font-weight: bold;
+      font-size: 30px;
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      line-height: 30px;
+      font-size: 20px;
+      margin: 10px 0 0 0;
+    }
+
+    .event-card-time {
+      margin-left: 17px;
+      font-size: 18px;
+      opacity: .75;
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+    .card.small {
+      height: 140px;
+    }
+    .card.small .card-image {
+      height: 140px;
+    }
+}
+
+.card-image-large {
+  height: $ea-large-card-height;
+
+  p {
+    margin: 0;
+  }
+
+  .card-image-bg {
+    @extend .background-cover;
+    height: 100%;
+  }
+}
+
+.card-action-wrapper {
+  height: 100%;
+  overflow: hidden;
+  border-bottom: $ea-form-border;
+
+  img {
+    vertical-align: top;
+  }
+
+  .card-action-text {
+    margin-top: 5px;
+  }
+
+  h6 {
+    font-family: 'Brandon_Reg';
+    font-weight: bold;
+    color: $ea-lightgray;
+    margin: 0;
+  }
+
+  p {
+    font-family: 'Lato_Light';
+    line-height: 20px;
+    margin-bottom: 13px;
+  }
+
+  .card-action {
+    padding: 13px 15px 0 15px;
+
+    &.no-top-pad {
+      padding-top: 0;
+    }
+  }
+
+  .activity-map {
+    height: 100px;
+  }
+}
+
+.collapsed-card {
+  &.activity-details-card {
+    padding: 20px 15px 20px 15px;
+    box-shadow: none;
+
+    .card-content {
+      padding: 0;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    .card-upper-heading {
+      font-family: 'Brandon_Med';
+    }
+
+    .card-lower-heading {
+      margin-bottom: 10px;
+    }
+
+    .card-address-heading {
+      line-height: 30px;
+
+      &.bold {
+        font-weight: bold;
+      }
+    }
+
+    .activity-details-timespan {
+      margin-left: 10px;
+      font-size: 17px;
+    }
+
+    .card-address-line {
+      display: block;
+      line-height: 20px;
+      font-size: 15px;
+      padding-right: 30px;
+
+      &.light {
+        font-family: 'Lato_Light';
+
+        &.description {
+          margin-top: 15px;
+          margin-bottom: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .activity-arrow-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    height: 8px;
+  }
+}
+
+.guest-collection-header.calendar-btn-wrapper {
+  padding-top: 0;
+  margin-top: 13px;
+
+  .calendar-btn.h-btn-large {
+    padding: 0;
+  }
+}
+
+.card.event-card {
+  .event-status-btn {
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    height: 20px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    background-color: $ea-primary-color-tinted;
+    border-radius: 10px;
+    font-family: 'Brandon_Bold';
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 0 8px 0 11px;
+    font-size: 10px;
+
+    &.past-event {
+      padding: 0 10px 0 10px;
+    }
+  }
+
+  .event-duplicate-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 8px;
+    height: 30px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    background-color: $ea-primary-color-tinted;
+    border-radius: 20px;
+    font-family: 'Brandon_Bold';
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 0 8px 0 11px;
+    font-size: 12px;
+  }
+
+  .event-status-icon {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    top: 1px;
+    margin-left: 2px;
+  }
+}
+
+.event-logo-text {
+  font-size: 20px;
+  font-family: 'Brandon_Light';
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.card-image .card-title {
+  font-size: 30px;
+}

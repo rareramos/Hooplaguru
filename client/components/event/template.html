@@ -1,0 +1,24 @@
+<template name='Event'>
+  <div class='full-white-bg'>
+    <div class='img-preview-wrapper event-show-image'>
+      <div class='card small image-preview-card event-details-preview'>
+        <div class='card-image'> 
+          {{#if checkisVideo}}
+            <div class="vide-play-image" id="{{event._id}}">
+              <img id="img_{{event._id}}" src="/images/icon-play.png">
+            </div>
+            {{/if}}
+          {{> Image image=event className="card-image-bg"}}
+          <div class="background-opacity" style="background: -webkit-linear-gradient({{event.themeCss.gradient}});"></div>
+          <h3 class='card-title' style='color: {{event.themeCss.color}};'>{{event.title}}</h3>
+        </div>
+      </div>
+    </div>
+
+    {{> Template.dynamic template=rsvpTemplate}}
+  </div>
+
+  {{#if overlayTemplate}}
+    {{> Template.dynamic template=overlayTemplate}}
+  {{/if}}
+</template>

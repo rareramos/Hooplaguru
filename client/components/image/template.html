@@ -1,0 +1,16 @@
+<template name="Image">
+
+  {{#if isVideo}}
+      {{{userVideo}}}
+  {{else}}
+  	<picture>
+    	<source srcset={{imageSrc}} media="(min-width: 1000px)">
+    	<img srcset={{imageSrc}}
+      	data-id={{dataId}}
+      	style='width: 100%;
+             object-fit: cover;'
+     	class={{_className}}>
+  	</picture>
+  {{/if}}
+</template>
+                                   

@@ -1,0 +1,15 @@
+.event-media-wrapper video {
+  position: absolute;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+  opacity: 1 !important;
+}
+
+.card-image video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+  

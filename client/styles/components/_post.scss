@@ -1,0 +1,160 @@
+.collection-item.wall-collection-item.post-important {
+  background-color: $ea-wall-lightgray;
+
+  .post-important-icon {
+    height: 13px;
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+  }
+}
+
+.wall-post-collection {
+  @extend .scrollable;
+  height: 100%;
+  video {
+    height: 250px;
+    object-fit: fill;
+  }
+}
+
+.delete-post {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 12px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.post-prompts {
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.post-prompt {
+  font-size: 15px;
+  font-family: 'Lato_Reg';
+  line-height: 20px;
+  float: right;
+  padding: 5px;
+  cursor: pointer;
+
+  img {
+    margin-right: 5px;
+  }
+
+  .post-share-icon {
+    position: relative;
+    top: 1px;
+    height: 13px;
+    width: 16px;
+  }
+
+  .post-comment-icon {
+    position: relative;
+    top: 2px;
+    height: 13px;
+    width: 14px;
+  }
+
+  &.share {
+    margin-left: 10px;
+  }
+}
+
+.collection-item.new-messages-notice {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  border-bottom: none;
+
+  p {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 110px;
+    margin: 0 auto;
+    background-color: $primary-color-light;
+    font-family: 'Lato_Light';
+  }
+
+  .new-msg-divider {
+    position: absolute;
+    border-top: 1px solid $primary-color;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+  }
+}
+
+.wall-post-image {
+  @extend .background-cover;
+  height: $ea-large-card-height;
+  width: 100%;
+  cursor: pointer;
+}
+
+.post-prompt-footer.post-prompts {
+  position: absolute;
+  z-index: 1000;
+  background-color: $ea-primary-color-tinted;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-right: 10px;
+  margin-bottom: 0;
+  height: 36px;
+}
+
+.wall-post-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cmnt-pic img,.like-pic img {
+  margin-right: 10px;
+}
+
+.likeperson {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.post-listing {
+  position: relative;
+  padding: 10px;
+}
+
+.wall-post-row {
+  margin-bottom: 0px !important;
+  .col {
+    padding : 0 !important;
+  }
+}
+
+@media screen and (min-width:768px) {
+    .wall-post-collection  {
+      video {
+        height: 335px !important;
+        width: 335px !important;
+        object-fit: fill;
+      }
+      img.wall-post-image {
+        height: 335px !important;
+        width: 335px !important;
+      }
+    }
+  .post-prompts {
+    width: 345px;
+  }
+}
+
+.post-prompt-likes
+{
+  position: relative;
+  top: 3px;
+}

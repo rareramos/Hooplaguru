@@ -1,0 +1,12 @@
+<template name='GuestListHeader'>
+  <li class='guest-collection-header'>
+    {{#if yesGuests}}
+      <h2 class='guest-collection-header-text'>
+        {{guestListTitle yesGuests}}
+      </h2>
+    {{/if}}
+    <a class='h-btn-large add-guests-btn'>
+      {{_ "guests.add_guest"}}
+    </a>
+  </li>
+</template>

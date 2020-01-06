@@ -1,0 +1,25 @@
+.prlx-swiper {
+  @extend .scrollable;
+
+  .swiper-background {
+    @extend .bounce-scroll-slide;
+
+    position: relative;
+    z-index: 100;
+  }
+
+  .swiper-wrapper {
+    @extend .bounce-scroll-slide;
+
+    position: absolute;
+    top: 0;
+  }
+}
+
+.offset-prlx-container {
+  position: absolute;
+  top: $navbar-height;
+  /*height: 100%;*/
+  width: 100%;
+  max-width: 1026px;
+}

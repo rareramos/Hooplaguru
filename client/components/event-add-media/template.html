@@ -1,0 +1,76 @@
+<template name='eventAddMedia'>
+  <div id='add-photo-popup' class='ea-modal'>
+    <div class='navbar-fixed'>
+      <nav class=ea-modal-nav>
+        <div class='nav-wrapper'>
+          {{> ModalHeader
+            leftIcon='/icons/icon-cancel-x-black@2x.png'
+            title=addMediaTitle leftIconClass='left-header left-header-icon'
+          }}
+        </div>
+      </nav>
+    </div>
+    <div class='guests-tabs-row row'>
+      <div id='add-images' class="col s6 add-photos active-photos">{{_ "photos.images"}}</div>
+      <div id='add-videos' class="col s6 add-photos">{{_ "photos.videos"}}</div>
+    </div>
+    <ul class='add-guest-btn-wrapper collection with-header'>
+      
+        <div id="add-photo-form-container">
+          {{#autoForm
+                id='event-photos-form'
+                schema='Schemas.Upload'
+                type='insert'
+                class="inline-button"}}
+                <li class='guest-collection-header add-media-li'>
+                  <span class="add-media-lable">{{_ "photos.select_title"}}</span>
+                  {{> afQuickField name="tags" id="imageActivity" type="universe-select" multiple=true options=s2Opts uniPlaceholder="General"}}
+
+                </li>
+
+                <li class='guest-collection-header add-media-li'>
+                  <span class="add-media-lable">{{_ "photos.select_images"}}</span>
+                  <input id="upload-field" type="file" class="js-file" accept="image/*" multiple="">
+                </li>
+                
+              {{/autoForm}}
+        </div>
+    
+     
+        <div id="add-video-form-container" style="display: none;">
+          {{#autoForm
+                id='event-videos-form'
+                schema='Schemas.Upload'
+                type='insert'
+                class="inline-button"}}
+
+                <li class='guest-collection-header add-media-li'>
+                  <span class="add-media-lable">{{_ "photos.select_title"}}</span>
+                  {{> afQuickField name="tags" id="videoActivity" type="universe-select" multiple=true options=s2Opts uniPlaceholder="General"}}
+                </li>
+
+                <li class='guest-collection-header add-media-li'>
+                  <span class="add-media-lable">{{_ "photos.select_videos"}}</span>
+                  <input id="upload-field-video" type="file" class="js-file" accept="video/*" >
+                </li>
+
+              {{/autoForm}}
+        </div>
+
+         {{#if formUploadError}}
+            <p class='login-form-error center-align formUploadError'><i class="mdi-alert-warning"></i>{{formUploadError}}</p>
+         {{/if}}
+      
+    </ul>
+
+    <ul class='add-guest-btn-wrapper collection with-header'>
+      <li class='guest-collection-header guest-collection-header-border'>
+        <button id='add-media-btn' class='h-btn-large' data-event="Media Added.">
+          {{mediaBtnTxt}}
+        </button>
+      </li>
+    </ul>
+
+
+  </div>
+</template>

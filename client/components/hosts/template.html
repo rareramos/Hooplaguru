@@ -1,0 +1,11 @@
+<template name='Hosts'>
+  <div class='swiper-slide short-slide'>
+    <div class='bounce-scroll-slide'>
+      <ul class='collection'>
+        {{#each currentEvent.hosts}}
+          {{> HostInfo}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</template>
